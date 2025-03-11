@@ -1,0 +1,45 @@
+{
+  "deftheme": {
+    "name": "Default",
+    "properties": [
+      {
+        "nid": 1000206,
+        "strtype": "THEME_COLOR",
+        "strval": "BG Button",
+        "intarray": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "InheritedType": 0
+      },
+      {
+        "nid": 1000207,
+        "strtype": "THEME_COLOR",
+        "strval": "Text",
+        "intarray": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "InheritedType": 0
+      },
+      {
+        "nid": 1000208,
+        "strtype": "THEME_COLOR",
+        "strval": "Container",
+        "intarray": [
+          57,
+          57,
+          57,
+          255
+        ],
+        "InheritedType": 0
+      }
+    ]
+  },
+  "themes": [],
+  "selected_theme": "Default"
+}
