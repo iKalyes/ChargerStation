@@ -1,0 +1,16 @@
+{
+  "codename": "ASCII32MONO",
+  "ttf_path": "/assets/SarasaMonoSC-Bold.ttf",
+  "bin_path": "/assets\\ui_font_ASCII32MONO.bin",
+  "c_path": "/assets\\ui_font_ASCII32MONO.c",
+  "cfg_path": "/assets\\ui_font_ASCII32MONO.fcfg",
+  "size": 32,
+  "bpp": 8,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

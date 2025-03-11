@@ -1,0 +1,16 @@
+{
+  "codename": "ASCII16MONO",
+  "ttf_path": "/assets/SarasaMonoSC-Bold.ttf",
+  "bin_path": "/assets\\ui_font_ASCII16MONO.bin",
+  "c_path": "/assets\\ui_font_ASCII16MONO.c",
+  "cfg_path": "/assets\\ui_font_ASCII16MONO.fcfg",
+  "size": 16,
+  "bpp": 8,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

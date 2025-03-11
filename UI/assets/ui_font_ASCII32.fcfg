@@ -1,0 +1,16 @@
+{
+  "codename": "ASCII32",
+  "ttf_path": "/assets/SarasaGothicSC-Bold.ttf",
+  "bin_path": "/assets\\ui_font_ASCII32.bin",
+  "c_path": "/assets\\ui_font_ASCII32.c",
+  "cfg_path": "/assets\\ui_font_ASCII32.fcfg",
+  "size": 32,
+  "bpp": 8,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
