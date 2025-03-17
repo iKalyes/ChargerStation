@@ -42,3 +42,7 @@ def USBC3Adjust(event_struct):
 def USBC2Adjust(event_struct):
     return
 
+
+def USBC1Adjust(event_struct):
+    return
+

@@ -13425,7 +13425,7 @@
     "uiExportFolderPath": "E:\\ChargerStation\\src\\ui",
     "projectExportFolderPath": "E:\\ChargerStation",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 15,
+    "backup_cnt": 16,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

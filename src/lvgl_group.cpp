@@ -11,9 +11,16 @@ void lvgl_group_init()
     lv_group_add_obj(group, ui_Setting);
 
     lv_group_add_obj(group, ui_WiFiWebPage);
+    lv_group_add_obj(group, ui_ADCAdjust);
     lv_group_add_obj(group, ui_FanSwitch);
-    lv_group_add_obj(group, ui_PwControl);
     lv_group_add_obj(group, ui_SliderSleepTime);
     lv_group_add_obj(group, ui_SliderBrightness);
     lv_group_add_obj(group, ui_Back);
+
+    lv_group_add_obj(group, ui_USBAAdjust);
+    lv_group_add_obj(group, ui_USBC3Adjust);
+    lv_group_add_obj(group, ui_USBC2Adjust);
+    lv_group_add_obj(group, ui_USBC1Adjust);
+    lv_group_add_obj(group, ui_ADCBack);
+
 }
