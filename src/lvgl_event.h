@@ -3,6 +3,7 @@
 
 #define TYPE_C 23
 #define TYPE_A 27
+#define FAN 26
 
 #include "ui/ui_helpers.h"
 #include "ui/ui_events.h"

@@ -17,6 +17,10 @@ extern float voltage0;
 extern float voltage1;
 extern float voltage2;
 extern float voltage3;
+extern float voltage0_adc;
+extern float voltage1_adc;
+extern float voltage2_adc;
+extern float voltage3_adc;
 extern lv_timer_t* adc_timer;
 
 #endif

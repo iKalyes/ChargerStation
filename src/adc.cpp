@@ -29,10 +29,10 @@ void adc_init()
 // 读取和平滑处理
 void readVoltages() {
     // 读取原始值
-    float raw0 = 11.00 * (float)(analogRead(ADC0_PIN)) * 1e-3;
-    float raw1 = 11.00 * (float)(analogRead(ADC1_PIN)) * 1e-3;
-    float raw2 = 9.50 * (float)(analogRead(ADC2_PIN)) * 1e-3;
-    float raw3 = 9.50 * (float)(analogRead(ADC3_PIN)) * 1e-3;
+    float raw0 = voltage0_adc * (float)(analogRead(ADC0_PIN)) * 1e-3;
+    float raw1 = voltage1_adc * (float)(analogRead(ADC1_PIN)) * 1e-3;
+    float raw2 = voltage2_adc * (float)(analogRead(ADC2_PIN)) * 1e-3;
+    float raw3 = voltage3_adc * (float)(analogRead(ADC3_PIN)) * 1e-3;
     
     // 平滑处理
     voltage0 = updateBuffer(raw0, voltage0_buffer);
@@ -68,4 +68,9 @@ void adc_task(lv_timer_t *timer)
     lv_label_set_text_fmt(ui_VoltageUSBC3, "%02d.%01dV", voltage1_int, voltage1_frac);
     lv_label_set_text_fmt(ui_VoltageUSBC2, "%02d.%01dV", voltage2_int, voltage2_frac);
     lv_label_set_text_fmt(ui_VoltageUSBC1, "%02d.%01dV", voltage3_int, voltage3_frac);
+
+    lv_label_set_text_fmt(ui_VoltageUSBAADC, "%02d.%01dV", voltage0_int, voltage0_frac);
+    lv_label_set_text_fmt(ui_VoltageUSBC3ADC, "%02d.%01dV", voltage1_int, voltage1_frac);
+    lv_label_set_text_fmt(ui_VoltageUSBC2ADC, "%02d.%01dV", voltage2_int, voltage2_frac);
+    lv_label_set_text_fmt(ui_VoltageUSBC1ADC, "%02d.%01dV", voltage3_int, voltage3_frac);
 }

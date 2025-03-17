@@ -1,5 +1,6 @@
 SET(SOURCES screens/ui_MainScreen.c
     screens/ui_SettingScreen.c
+    screens/ui_ADCAdjustScreen.c
     ui_theme_manager.c
     ui_themes.c
     ui.c
@@ -13,8 +14,8 @@ SET(SOURCES screens/ui_MainScreen.c
     images/ui_img_2003059303.c
     images/ui_img_175199537.c
     images/ui_img_593743026.c
+    images/ui_img_155116563.c
     images/ui_img_2103744591.c
-    images/ui_img_1093450328.c
     images/ui_img_123890670.c
     images/ui_img_763584403.c
     images/ui_img_852573520.c

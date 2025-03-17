@@ -30,3 +30,15 @@ def USBAPowerON(event_struct):
 def USBAPowerOFF(event_struct):
     return
 
+
+def USBAAdjust(event_struct):
+    return
+
+
+def USBC3Adjust(event_struct):
+    return
+
+
+def USBC2Adjust(event_struct):
+    return
+

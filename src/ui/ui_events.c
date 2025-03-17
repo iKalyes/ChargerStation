@@ -44,3 +44,23 @@ void PwControlOFF(lv_event_t * e)
 {
 	// Your code here
 }
+
+void USBAAdjust(lv_event_t * e)
+{
+	// Your code here
+}
+
+void USBC3Adjust(lv_event_t * e)
+{
+	// Your code here
+}
+
+void USBC2Adjust(lv_event_t * e)
+{
+	// Your code here
+}
+
+void USBC1Adjust(lv_event_t * e)
+{
+	// Your code here
+}
