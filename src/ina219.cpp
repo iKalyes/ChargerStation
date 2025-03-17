@@ -12,7 +12,7 @@ void ina219_init()
 void ina219_task(lv_timer_t *timer)
 {
     voltage = ina219.getBusVoltage_V();
-    current = ina219.getCurrent_mA() / 1000;
+    current = ina219.getCurrent_mA() / 1000 * 2;
     power = ina219.getPower_mW() / 1000;
 
     // 电压：2位整数，2位小数
