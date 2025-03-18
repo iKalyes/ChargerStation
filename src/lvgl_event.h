@@ -14,6 +14,7 @@
 #include <lvgl.h>
 #include <display.h>
 #include <variables.h>
+#include <lvgl_group.h>
 
 void gpio_init();
 

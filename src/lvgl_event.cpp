@@ -42,7 +42,8 @@ void ui_event_Setting( lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
 
 if ( event_code == LV_EVENT_PRESSED) {
-      _ui_screen_change( &ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_SettingScreen_screen_init);
+      _ui_screen_change( &ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_SettingScreen_screen_init);
+      lvgl_group_to_setting();
 }
 }
 
@@ -51,7 +52,8 @@ void ui_event_ADCAdjust(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_PRESSED) {
-        _ui_screen_change(&ui_ADCAdjustScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_ADCAdjustScreen_screen_init);
+        _ui_screen_change(&ui_ADCAdjustScreen, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_ADCAdjustScreen_screen_init);
+        lvgl_group_to_adc();
     }
 }
 
@@ -91,7 +93,8 @@ void ui_event_Back( lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);
 
 if ( event_code == LV_EVENT_PRESSED) {
-      _ui_screen_change( &ui_MainScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_MainScreen_screen_init);
+      _ui_screen_change( &ui_MainScreen, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_MainScreen_screen_init);
+      lvgl_group_to_main();
 }
 }
 
@@ -140,6 +143,7 @@ void ui_event_ADCBack(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_PRESSED) {
-        _ui_screen_change(&ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_SettingScreen_screen_init);
+        _ui_screen_change(&ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_SettingScreen_screen_init);
+        lvgl_group_to_setting();
     }
 }

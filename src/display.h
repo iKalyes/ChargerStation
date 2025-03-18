@@ -19,5 +19,6 @@ void backlight_init();
 void backlight_set( uint8_t brightness );
 void display_init();
 void display_task();
+void style_init();
 
 #endif
