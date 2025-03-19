@@ -51,9 +51,11 @@ extern lv_obj_t * ui_Power;
 extern lv_obj_t * ui_TextP;
 extern lv_obj_t * ui_TextW;
 extern lv_obj_t * ui_ImageWiFi;
-extern lv_obj_t * ui_ImageTemperature;
-extern lv_obj_t * ui_EspTemp;
-extern lv_obj_t * ui_TextEspTemp;
+extern lv_obj_t * ui_Hour;
+extern lv_obj_t * ui_Minute;
+extern lv_obj_t * ui_Second;
+extern lv_obj_t * ui_TextHM;
+extern lv_obj_t * ui_TextMS;
 extern lv_obj_t * ui_USBADock;
 extern lv_obj_t * ui_ImageUSBA;
 extern lv_obj_t * ui_VoltageUSBA;
@@ -75,6 +77,7 @@ void ui_SettingScreen_screen_init(void);
 extern lv_obj_t * ui_SettingScreen;
 extern lv_obj_t * ui_SettingHeader;
 extern lv_obj_t * ui_TextSettingHeader;
+extern lv_obj_t * ui_FreeSpace;
 extern lv_obj_t * ui_SettingDock;
 extern lv_obj_t * ui_WiFiWebPage;
 extern lv_obj_t * ui_ImageWiFiWebPage;
@@ -141,7 +144,6 @@ LV_IMG_DECLARE(ui_img_426970754);    // assets/mdi_usb-c-port.png
 LV_IMG_DECLARE(ui_img_2092987087);    // assets/icon-park-outline_usb-micro-one.png
 LV_IMG_DECLARE(ui_img_1671917170);    // assets/material-symbols_settings-rounded.png
 LV_IMG_DECLARE(ui_img_1338783594);    // assets/material-symbols_wifi-off-rounded.png
-LV_IMG_DECLARE(ui_img_2003059303);    // assets/material-symbols_device-thermostat.png
 LV_IMG_DECLARE(ui_img_175199537);    // assets/mynaui_lightning-solid.png
 LV_IMG_DECLARE(ui_img_593743026);    // assets/material-symbols_wifi-rounded.png
 LV_IMG_DECLARE(ui_img_155116563);    // assets/material-symbols_instant-mix-rounded.png

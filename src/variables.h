@@ -12,6 +12,8 @@ extern lv_timer_t* ina219_timer;
 //SEETING
 extern uint8_t brightness;
 extern uint16_t sleep_time;
+extern bool fan_switch;
+extern uint8_t free_space;
 //ADC
 extern float voltage0;
 extern float voltage1;
@@ -22,5 +24,8 @@ extern float voltage1_adc;
 extern float voltage2_adc;
 extern float voltage3_adc;
 extern lv_timer_t* adc_timer;
+//MAIN
+extern bool USBC_Switch;
+extern bool USBA_Switch;
 
 #endif

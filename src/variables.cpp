@@ -8,6 +8,8 @@ lv_timer_t* ina219_timer = NULL;
 //SEETING
 uint8_t brightness = 0;
 uint16_t sleep_time = 0;
+bool fan_switch = false;
+uint8_t free_space;
 //ADC
 float voltage0 = 0.0f;
 float voltage1 = 0.0f;
@@ -18,3 +20,6 @@ float voltage1_adc = 10.85f;
 float voltage2_adc = 10.85f;
 float voltage3_adc = 10.85f;
 lv_timer_t* adc_timer = NULL;
+//MAIN
+bool USBC_Switch = false;
+bool USBA_Switch = false;

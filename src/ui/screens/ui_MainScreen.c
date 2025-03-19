@@ -236,39 +236,76 @@ void ui_MainScreen_screen_init(void)
     lv_img_set_src(ui_ImageWiFi, &ui_img_1338783594);
     lv_obj_set_width(ui_ImageWiFi, LV_SIZE_CONTENT);   /// 32
     lv_obj_set_height(ui_ImageWiFi, LV_SIZE_CONTENT);    /// 32
-    lv_obj_set_x(ui_ImageWiFi, -10);
+    lv_obj_set_x(ui_ImageWiFi, -2);
     lv_obj_set_y(ui_ImageWiFi, -10);
     lv_obj_set_align(ui_ImageWiFi, LV_ALIGN_BOTTOM_RIGHT);
     lv_obj_add_flag(ui_ImageWiFi, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_ImageWiFi, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_ImageTemperature = lv_img_create(ui_InformationDock);
-    lv_img_set_src(ui_ImageTemperature, &ui_img_2003059303);
-    lv_obj_set_width(ui_ImageTemperature, LV_SIZE_CONTENT);   /// 32
-    lv_obj_set_height(ui_ImageTemperature, LV_SIZE_CONTENT);    /// 32
-    lv_obj_set_x(ui_ImageTemperature, 0);
-    lv_obj_set_y(ui_ImageTemperature, -10);
-    lv_obj_set_align(ui_ImageTemperature, LV_ALIGN_BOTTOM_LEFT);
-    lv_obj_add_flag(ui_ImageTemperature, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_ImageTemperature, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_Hour = lv_label_create(ui_InformationDock);
+    lv_obj_set_width(ui_Hour, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Hour, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Hour, 3);
+    lv_obj_set_y(ui_Hour, 75);
+    lv_obj_set_align(ui_Hour, LV_ALIGN_LEFT_MID);
+    lv_label_set_text(ui_Hour, "00");
+    ui_object_set_themeable_style_property(ui_Hour, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_Text_Switch);
+    ui_object_set_themeable_style_property(ui_Hour, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_Text_Switch);
+    lv_obj_set_style_text_font(ui_Hour, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_EspTemp = lv_label_create(ui_InformationDock);
-    lv_obj_set_width(ui_EspTemp, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_EspTemp, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_EspTemp, 28);
-    lv_obj_set_y(ui_EspTemp, -6);
-    lv_obj_set_align(ui_EspTemp, LV_ALIGN_BOTTOM_LEFT);
-    lv_label_set_text(ui_EspTemp, "00.0");
-    lv_obj_set_style_text_font(ui_EspTemp, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Minute = lv_label_create(ui_InformationDock);
+    lv_obj_set_width(ui_Minute, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Minute, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Minute, 51);
+    lv_obj_set_y(ui_Minute, 75);
+    lv_obj_set_align(ui_Minute, LV_ALIGN_LEFT_MID);
+    lv_label_set_text(ui_Minute, "00");
+    ui_object_set_themeable_style_property(ui_Minute, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_Text_Switch);
+    ui_object_set_themeable_style_property(ui_Minute, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_Text_Switch);
+    lv_obj_set_style_text_font(ui_Minute, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_TextEspTemp = lv_label_create(ui_InformationDock);
-    lv_obj_set_width(ui_TextEspTemp, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TextEspTemp, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_TextEspTemp, 16);
-    lv_obj_set_y(ui_TextEspTemp, 76);
-    lv_obj_set_align(ui_TextEspTemp, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_TextEspTemp, "℃");
-    lv_obj_set_style_text_font(ui_TextEspTemp, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Second = lv_label_create(ui_InformationDock);
+    lv_obj_set_width(ui_Second, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Second, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Second, 99);
+    lv_obj_set_y(ui_Second, 75);
+    lv_obj_set_align(ui_Second, LV_ALIGN_LEFT_MID);
+    lv_label_set_text(ui_Second, "00");
+    ui_object_set_themeable_style_property(ui_Second, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_Text_Switch);
+    ui_object_set_themeable_style_property(ui_Second, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_Text_Switch);
+    lv_obj_set_style_text_font(ui_Second, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_TextHM = lv_label_create(ui_InformationDock);
+    lv_obj_set_width(ui_TextHM, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_TextHM, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_TextHM, 35);
+    lv_obj_set_y(ui_TextHM, -7);
+    lv_obj_set_align(ui_TextHM, LV_ALIGN_BOTTOM_LEFT);
+    lv_label_set_text(ui_TextHM, ":");
+    ui_object_set_themeable_style_property(ui_TextHM, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_Text_Switch);
+    ui_object_set_themeable_style_property(ui_TextHM, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_Text_Switch);
+    lv_obj_set_style_text_font(ui_TextHM, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_TextMS = lv_label_create(ui_InformationDock);
+    lv_obj_set_width(ui_TextMS, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_TextMS, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_TextMS, 83);
+    lv_obj_set_y(ui_TextMS, -7);
+    lv_obj_set_align(ui_TextMS, LV_ALIGN_BOTTOM_LEFT);
+    lv_label_set_text(ui_TextMS, ":");
+    ui_object_set_themeable_style_property(ui_TextMS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_Text_Switch);
+    ui_object_set_themeable_style_property(ui_TextMS, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_Text_Switch);
+    lv_obj_set_style_text_font(ui_TextMS, &ui_font_ASCII32MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_USBADock = lv_obj_create(ui_MainScreen);
     lv_obj_remove_style_all(ui_USBADock);

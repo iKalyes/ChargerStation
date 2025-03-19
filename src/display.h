@@ -6,6 +6,9 @@
 #include <lvgl.h>
 #include "ui/ui.h"
 #include <variables.h>
+#include <flash.h>
+#include <gpio.h>
+#include <lvgl_event.h>
 
 /*Change to your screen resolution*/
 static const uint16_t screenWidth  = 240;
@@ -19,6 +22,7 @@ void backlight_init();
 void backlight_set( uint8_t brightness );
 void display_init();
 void display_task();
-void style_init();
+void style_reset();
+void setting_reset();
 
 #endif

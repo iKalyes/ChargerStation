@@ -31,13 +31,28 @@ void ui_SettingScreen_screen_init(void)
     ui_TextSettingHeader = lv_label_create(ui_SettingHeader);
     lv_obj_set_width(ui_TextSettingHeader, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_TextSettingHeader, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_TextSettingHeader, LV_ALIGN_CENTER);
+    lv_obj_set_x(ui_TextSettingHeader, 10);
+    lv_obj_set_y(ui_TextSettingHeader, 0);
+    lv_obj_set_align(ui_TextSettingHeader, LV_ALIGN_LEFT_MID);
     lv_label_set_text(ui_TextSettingHeader, "System Setting");
     ui_object_set_themeable_style_property(ui_TextSettingHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_Text_Switch);
     ui_object_set_themeable_style_property(ui_TextSettingHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
                                            _ui_theme_alpha_Text_Switch);
     lv_obj_set_style_text_font(ui_TextSettingHeader, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_FreeSpace = lv_label_create(ui_SettingHeader);
+    lv_obj_set_width(ui_FreeSpace, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_FreeSpace, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_FreeSpace, -10);
+    lv_obj_set_y(ui_FreeSpace, 0);
+    lv_obj_set_align(ui_FreeSpace, LV_ALIGN_RIGHT_MID);
+    lv_label_set_text(ui_FreeSpace, "000");
+    ui_object_set_themeable_style_property(ui_FreeSpace, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
+                                           _ui_theme_color_Text_Switch);
+    ui_object_set_themeable_style_property(ui_FreeSpace, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
+                                           _ui_theme_alpha_Text_Switch);
+    lv_obj_set_style_text_font(ui_FreeSpace, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_SettingDock = lv_obj_create(ui_SettingScreen);
     lv_obj_remove_style_all(ui_SettingDock);

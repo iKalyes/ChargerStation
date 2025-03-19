@@ -1,27 +1,17 @@
 #include <lvgl_event.h>
 
-void gpio_init()
-{
-      pinMode(TYPE_C, OUTPUT);
-      pinMode(TYPE_A, OUTPUT);
-      digitalWrite(TYPE_C, LOW);
-      digitalWrite(TYPE_A, LOW);
-
-      ledcSetup(1, 1000, 8);
-      ledcAttachPin(FAN, 1);
-      ledcWrite(1, 0); 
-}
-
 void ui_event_USBCSwitch( lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);lv_obj_t * target = lv_event_get_target(e);
 
 if ( event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target,LV_STATE_CHECKED)  ) {
       USBCPowerON( e );
-      digitalWrite(TYPE_C, HIGH);
+      USBC_ON();
+      save_USBC_setting();
 }
 if ( event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target,LV_STATE_CHECKED)  ) {
       USBCPowerOFF( e );
-      digitalWrite(TYPE_C, LOW);
+      USBC_OFF();
+      save_USBC_setting();
 }
 }
 
@@ -30,11 +20,13 @@ void ui_event_USBASwitch( lv_event_t * e) {
 
 if ( event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target,LV_STATE_CHECKED)  ) {
       USBAPowerON( e );
-      digitalWrite(TYPE_A, HIGH);
+      USBA_ON();
+      save_USBA_setting();
 }
 if ( event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target,LV_STATE_CHECKED)  ) {
       USBAPowerOFF( e );
-      digitalWrite(TYPE_A, LOW);
+      USBA_OFF();
+      save_USBA_setting();
 }
 }
 
@@ -62,11 +54,11 @@ void ui_event_FanSwitch( lv_event_t * e) {
 
 if ( event_code == LV_EVENT_VALUE_CHANGED &&  lv_obj_has_state(target,LV_STATE_CHECKED)  ) {
       FanSwitchON( e );
-      ledcWrite(1, 255);
+      FAN_ON();
 }
 if ( event_code == LV_EVENT_VALUE_CHANGED &&  !lv_obj_has_state(target,LV_STATE_CHECKED)  ) {
       FanSwitchOFF( e );
-      ledcWrite(1, 0);
+      FAN_OFF();
 }
 }
 
@@ -75,6 +67,7 @@ void ui_event_SliderSleepTime( lv_event_t * e) {
 
 if ( event_code == LV_EVENT_VALUE_CHANGED) {
       _ui_slider_set_text_value( ui_SleepTime, target, "", "M");
+      sleep_time = lv_slider_get_value(target) * 60;
 }
 }
 
@@ -95,6 +88,7 @@ void ui_event_Back( lv_event_t * e) {
 if ( event_code == LV_EVENT_PRESSED) {
       _ui_screen_change( &ui_MainScreen, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_MainScreen_screen_init);
       lvgl_group_to_main();
+      save_setting();
 }
 }
 
@@ -145,5 +139,6 @@ void ui_event_ADCBack(lv_event_t * e)
     if(event_code == LV_EVENT_PRESSED) {
         _ui_screen_change(&ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 0, 0, &ui_SettingScreen_screen_init);
         lvgl_group_to_setting();
+        save_adc_setting();
     }
 }

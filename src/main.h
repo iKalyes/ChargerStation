@@ -11,4 +11,7 @@
 #include <lvgl_event.h>
 #include <variables.h>
 
+#include <flash.h>
+#include <gpio.h>
+
 #endif

@@ -19,7 +19,7 @@ void backlight_init()
 {
     ledcSetup(0, 1000, 8);
     ledcAttachPin(TFT_BL, 0); //backlight control
-    ledcWrite(0, 255); //turn on backlight
+    ledcWrite(0, brightness);
 }
 
 void backlight_set( uint8_t brightness )
@@ -48,8 +48,10 @@ void display_init()
     lv_disp_drv_register( &disp_drv );
     
     ui_init(); /* Initialize the UI */
+
+    setting_reset();
     backlight_init(); /* Initialize the backlight */
-    style_init(); /* Initialize the focus style */
+    style_reset(); /* Initialize the focus style */
 }
 
 void display_task()
@@ -57,7 +59,7 @@ void display_task()
     lv_task_handler(); /* let the GUI do its work */
 }
 
-void style_init()
+void style_reset()
 {
     lv_obj_set_style_outline_color(ui_USBCSwitch, lv_color_hex(0xffffff), LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_width(ui_USBCSwitch, 3, LV_STATE_FOCUS_KEY);
@@ -95,4 +97,50 @@ void style_init()
     lv_obj_set_style_outline_width(ui_USBC1Adjust, 3, LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_color(ui_ADCBack, lv_color_hex(0xffff00), LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_width(ui_ADCBack, 3, LV_STATE_FOCUS_KEY);
+}
+
+void setting_reset()
+{
+    lv_label_set_text_fmt(ui_FreeSpace, "%d", free_space);
+
+    if(USBC_Switch == true)
+    {
+        lv_obj_add_state(ui_USBCSwitch, LV_STATE_CHECKED);
+        USBC_ON();
+    }
+    else
+    {
+        lv_obj_clear_state(ui_USBCSwitch, LV_STATE_CHECKED);
+        USBC_OFF();
+    }
+    if(USBA_Switch == true)
+    {
+        lv_obj_add_state(ui_USBASwitch, LV_STATE_CHECKED);
+        USBA_ON();
+    }
+    else
+    {
+        lv_obj_clear_state(ui_USBASwitch, LV_STATE_CHECKED);
+        USBA_OFF();
+    }
+
+    lv_slider_set_value(ui_SliderBrightness, (uint8_t)(brightness / 2.55f + 0.5f), LV_ANIM_OFF);
+    lv_label_set_text_fmt(ui_Brightness, "%d%%", (uint8_t)(brightness / 2.55f + 0.5f));
+    lv_slider_set_value(ui_SliderSleepTime, sleep_time / 60, LV_ANIM_OFF);
+    lv_label_set_text_fmt(ui_SleepTime, "%dM", sleep_time / 60);
+    if(fan_switch == true)
+    {
+        lv_obj_add_state(ui_FanSwitch, LV_STATE_CHECKED);
+        FAN_ON();
+    }
+    else
+    {
+        lv_obj_clear_state(ui_FanSwitch, LV_STATE_CHECKED);
+        FAN_OFF();
+    }
+
+    lv_slider_set_value(ui_USBAAdjust, (uint16_t)(voltage0_adc * 100), LV_ANIM_OFF);
+    lv_slider_set_value(ui_USBC3Adjust, (uint16_t)(voltage1_adc * 100), LV_ANIM_OFF);
+    lv_slider_set_value(ui_USBC2Adjust, (uint16_t)(voltage2_adc * 100), LV_ANIM_OFF);
+    lv_slider_set_value(ui_USBC1Adjust, (uint16_t)(voltage3_adc * 100), LV_ANIM_OFF);
 }

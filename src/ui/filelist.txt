@@ -11,7 +11,6 @@ images/ui_img_426970754.c
 images/ui_img_2092987087.c
 images/ui_img_1671917170.c
 images/ui_img_1338783594.c
-images/ui_img_2003059303.c
 images/ui_img_175199537.c
 images/ui_img_593743026.c
 images/ui_img_155116563.c

@@ -1,9 +1,7 @@
 #ifndef _LVGL_EVENT_H
 #define _LVGL_EVENT_H
 
-#define TYPE_C 23
-#define TYPE_A 27
-#define FAN 26
+
 
 #include "ui/ui_helpers.h"
 #include "ui/ui_events.h"
@@ -15,7 +13,9 @@
 #include <display.h>
 #include <variables.h>
 #include <lvgl_group.h>
+#include <flash.h>
+#include <gpio.h>
 
-void gpio_init();
+
 
 #endif
