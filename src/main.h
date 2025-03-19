@@ -14,4 +14,11 @@
 #include <flash.h>
 #include <gpio.h>
 
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <WebServer.h>
+#include <WiFiUdp.h>
+#include <ArduinoJson.h>
+#include <TimeLib.h>
+
 #endif
