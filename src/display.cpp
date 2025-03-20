@@ -97,11 +97,22 @@ void style_reset()
     lv_obj_set_style_outline_width(ui_USBC1Adjust, 3, LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_color(ui_ADCBack, lv_color_hex(0xffff00), LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_width(ui_ADCBack, 3, LV_STATE_FOCUS_KEY);
+
+    static lv_style_t style_pr;
+    lv_style_init(&style_pr);
+    lv_style_set_transform_width(&style_pr, 0);
+    lv_style_set_transform_height(&style_pr, 0);
+    lv_obj_add_style(ui_WiFiWebPage, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_Setting, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_ADCAdjust, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_Back, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_ADCBack, &style_pr, LV_STATE_PRESSED);
+
 }
 
 void setting_reset()
 {
-    lv_label_set_text_fmt(ui_FreeSpace, "%d", free_space);
+    lv_label_set_text_fmt(ui_FreeSpace, "ROM:%dB", free_space);
 
     if(USBC_Switch == true)
     {

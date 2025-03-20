@@ -1043,7 +1043,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      42,
+                      40,
                       28
                     ],
                     "InheritedType": 7
@@ -6164,7 +6164,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "System Setting",
+                    "strval": "Setting",
                     "InheritedType": 10
                   },
                   {
@@ -6317,7 +6317,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "000",
+                    "strval": "ROM:000Byte",
                     "InheritedType": 10
                   },
                   {
@@ -6839,7 +6839,7 @@
                     "strtype": "OBJECT/Position",
                     "intarray": [
                       0,
-                      2
+                      4
                     ],
                     "InheritedType": 7
                   },
@@ -6848,8 +6848,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      232,
-                      32
+                      228,
+                      28
                     ],
                     "InheritedType": 7
                   },
@@ -7271,8 +7271,8 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      232,
-                      32
+                      228,
+                      28
                     ],
                     "InheritedType": 7
                   },
@@ -7763,7 +7763,7 @@
                         "flags": 17,
                         "strtype": "OBJECT/Position",
                         "intarray": [
-                          153,
+                          148,
                           0
                         ],
                         "InheritedType": 7
@@ -8061,7 +8061,7 @@
                     "strtype": "OBJECT/Position",
                     "intarray": [
                       0,
-                      70
+                      68
                     ],
                     "InheritedType": 7
                   },
@@ -8070,7 +8070,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      232,
+                      228,
                       32
                     ],
                     "InheritedType": 7
@@ -8161,8 +8161,7 @@
                     "InheritedType": 11
                   }
                 ],
-                "saved_objtypeKey": "PANEL",
-                "tree_closed": true
+                "saved_objtypeKey": "PANEL"
               },
               {
                 "guid": "GUID18172494-683748S3604470",
@@ -8514,7 +8513,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      228,
+                      224,
                       28
                     ],
                     "InheritedType": 7
@@ -8762,8 +8761,7 @@
                     "InheritedType": 4
                   }
                 ],
-                "saved_objtypeKey": "SLIDER",
-                "tree_closed": true
+                "saved_objtypeKey": "SLIDER"
               },
               {
                 "guid": "GUID80151451-683737S663470",
@@ -9115,7 +9113,7 @@
                     "flags": 17,
                     "strtype": "OBJECT/Size",
                     "intarray": [
-                      228,
+                      224,
                       28
                     ],
                     "InheritedType": 7
@@ -13916,7 +13914,7 @@
     "uiExportFolderPath": "E:\\ChargerStation\\src\\ui",
     "projectExportFolderPath": "E:\\ChargerStation",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 18,
+    "backup_cnt": 19,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.11",
     "callfuncsexport": "C_FILE",

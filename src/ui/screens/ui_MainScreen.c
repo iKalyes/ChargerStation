@@ -77,7 +77,7 @@ void ui_MainScreen_screen_init(void)
     lv_obj_set_style_bg_opa(ui_USBASwitch, 255, LV_PART_KNOB | LV_STATE_DEFAULT);
 
     ui_Setting = lv_btn_create(ui_MainHeader);
-    lv_obj_set_width(ui_Setting, 42);
+    lv_obj_set_width(ui_Setting, 40);
     lv_obj_set_height(ui_Setting, 28);
     lv_obj_set_x(ui_Setting, -2);
     lv_obj_set_y(ui_Setting, 0);

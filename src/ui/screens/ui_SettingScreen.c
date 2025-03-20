@@ -34,7 +34,7 @@ void ui_SettingScreen_screen_init(void)
     lv_obj_set_x(ui_TextSettingHeader, 10);
     lv_obj_set_y(ui_TextSettingHeader, 0);
     lv_obj_set_align(ui_TextSettingHeader, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_TextSettingHeader, "System Setting");
+    lv_label_set_text(ui_TextSettingHeader, "Setting");
     ui_object_set_themeable_style_property(ui_TextSettingHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_Text_Switch);
     ui_object_set_themeable_style_property(ui_TextSettingHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -47,7 +47,7 @@ void ui_SettingScreen_screen_init(void)
     lv_obj_set_x(ui_FreeSpace, -10);
     lv_obj_set_y(ui_FreeSpace, 0);
     lv_obj_set_align(ui_FreeSpace, LV_ALIGN_RIGHT_MID);
-    lv_label_set_text(ui_FreeSpace, "000");
+    lv_label_set_text(ui_FreeSpace, "ROM:000Byte");
     ui_object_set_themeable_style_property(ui_FreeSpace, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
                                            _ui_theme_color_Text_Switch);
     ui_object_set_themeable_style_property(ui_FreeSpace, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
@@ -69,10 +69,10 @@ void ui_SettingScreen_screen_init(void)
                                            _ui_theme_alpha_Container);
 
     ui_WiFiWebPage = lv_btn_create(ui_SettingDock);
-    lv_obj_set_width(ui_WiFiWebPage, 232);
-    lv_obj_set_height(ui_WiFiWebPage, 32);
+    lv_obj_set_width(ui_WiFiWebPage, 228);
+    lv_obj_set_height(ui_WiFiWebPage, 28);
     lv_obj_set_x(ui_WiFiWebPage, 0);
-    lv_obj_set_y(ui_WiFiWebPage, 2);
+    lv_obj_set_y(ui_WiFiWebPage, 4);
     lv_obj_set_align(ui_WiFiWebPage, LV_ALIGN_TOP_MID);
     lv_obj_add_flag(ui_WiFiWebPage, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_WiFiWebPage, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -100,8 +100,8 @@ void ui_SettingScreen_screen_init(void)
     lv_obj_set_style_text_font(ui_TextWiFiWebPage, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_ADCAdjust = lv_btn_create(ui_SettingDock);
-    lv_obj_set_width(ui_ADCAdjust, 232);
-    lv_obj_set_height(ui_ADCAdjust, 32);
+    lv_obj_set_width(ui_ADCAdjust, 228);
+    lv_obj_set_height(ui_ADCAdjust, 28);
     lv_obj_set_x(ui_ADCAdjust, 0);
     lv_obj_set_y(ui_ADCAdjust, 36);
     lv_obj_set_align(ui_ADCAdjust, LV_ALIGN_TOP_MID);
@@ -131,10 +131,10 @@ void ui_SettingScreen_screen_init(void)
     lv_obj_set_style_text_font(ui_TextADCAdjust, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_PanelFanSwitch = lv_obj_create(ui_SettingDock);
-    lv_obj_set_width(ui_PanelFanSwitch, 232);
+    lv_obj_set_width(ui_PanelFanSwitch, 228);
     lv_obj_set_height(ui_PanelFanSwitch, 32);
     lv_obj_set_x(ui_PanelFanSwitch, 0);
-    lv_obj_set_y(ui_PanelFanSwitch, 70);
+    lv_obj_set_y(ui_PanelFanSwitch, 68);
     lv_obj_set_align(ui_PanelFanSwitch, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_PanelFanSwitch, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_PanelFanSwitch, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -164,7 +164,7 @@ void ui_SettingScreen_screen_init(void)
     ui_FanSwitch = lv_switch_create(ui_PanelFanSwitch);
     lv_obj_set_width(ui_FanSwitch, 64);
     lv_obj_set_height(ui_FanSwitch, 26);
-    lv_obj_set_x(ui_FanSwitch, 153);
+    lv_obj_set_x(ui_FanSwitch, 148);
     lv_obj_set_y(ui_FanSwitch, 0);
     lv_obj_set_align(ui_FanSwitch, LV_ALIGN_LEFT_MID);
     lv_obj_set_style_radius(ui_FanSwitch, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -184,7 +184,7 @@ void ui_SettingScreen_screen_init(void)
     lv_slider_set_value(ui_SliderSleepTime, 10, LV_ANIM_OFF);
     if(lv_slider_get_mode(ui_SliderSleepTime) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_SliderSleepTime, 0,
                                                                                                     LV_ANIM_OFF);
-    lv_obj_set_width(ui_SliderSleepTime, 228);
+    lv_obj_set_width(ui_SliderSleepTime, 224);
     lv_obj_set_height(ui_SliderSleepTime, 28);
     lv_obj_set_x(ui_SliderSleepTime, 0);
     lv_obj_set_y(ui_SliderSleepTime, 34);
@@ -239,7 +239,7 @@ void ui_SettingScreen_screen_init(void)
     lv_slider_set_value(ui_SliderBrightness, 50, LV_ANIM_OFF);
     if(lv_slider_get_mode(ui_SliderBrightness) == LV_SLIDER_MODE_RANGE) lv_slider_set_left_value(ui_SliderBrightness, 0,
                                                                                                      LV_ANIM_OFF);
-    lv_obj_set_width(ui_SliderBrightness, 228);
+    lv_obj_set_width(ui_SliderBrightness, 224);
     lv_obj_set_height(ui_SliderBrightness, 28);
     lv_obj_set_x(ui_SliderBrightness, 0);
     lv_obj_set_y(ui_SliderBrightness, 68);
