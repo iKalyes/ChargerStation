@@ -5,12 +5,12 @@ float voltage = 0.0f;
 float current = 0.0f;
 float power = 0.0f;
 lv_timer_t* ina219_timer = NULL;
-//SEETING
+//SEETING SCREEN//
 uint8_t brightness = 0;
 uint16_t sleep_time = 0;
 bool fan_switch = false;
 uint8_t free_space;
-//ADC
+//ADC ADJUST//
 float voltage0 = 0.0f;
 float voltage1 = 0.0f;
 float voltage2 = 0.0f;
@@ -20,6 +20,10 @@ float voltage1_adc = 10.85f;
 float voltage2_adc = 10.85f;
 float voltage3_adc = 10.85f;
 lv_timer_t* adc_timer = NULL;
-//MAIN
+//MAIN SCREEN//
 bool USBC_Switch = false;
 bool USBA_Switch = false;
+//FOR WEB AND WEATHER//
+uint8_t UpdateWeater_Time = 10; //10分钟更新
+uint32_t CityCode = 101280101; //广州
+String qWeather_Key;

@@ -142,3 +142,44 @@ void ui_event_ADCBack(lv_event_t * e)
         save_adc_setting();
     }
 }
+
+void ui_event_WiFiWebPage(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_PRESSED) {
+        _ui_screen_change(&ui_WiFiScreen, LV_SCR_LOAD_ANIM_NONE, 0, 0, &ui_WiFiScreen_screen_init);
+        lvgl_group_to_wifi();
+    }
+}
+
+void ui_event_WIFIStart(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_PRESSED) {
+        WIFIStart(e);
+        wificonfig();
+    }
+}
+
+void ui_event_WIFIReset(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_PRESSED) {
+        WIFIResrt(e);
+        wifireset();
+    }
+}
+
+void ui_event_WIFIBack(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_PRESSED) {
+        _ui_screen_change(&ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, &ui_SettingScreen_screen_init);
+        lvgl_group_to_setting();
+    }
+}
+

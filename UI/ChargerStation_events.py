@@ -46,3 +46,11 @@ def USBC2Adjust(event_struct):
 def USBC1Adjust(event_struct):
     return
 
+
+def WIFIResrt(event_struct):
+    return
+
+
+def WIFIStart(event_struct):
+    return
+

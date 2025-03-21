@@ -4,17 +4,17 @@
 #include <Arduino.h>
 #include <lvgl.h>
 
-//INA219
+//INA219//
 extern float voltage;
 extern float current;
 extern float power;
 extern lv_timer_t* ina219_timer;
-//SEETING
+//SEETING SCREEN//
 extern uint8_t brightness;
 extern uint16_t sleep_time;
 extern bool fan_switch;
 extern uint8_t free_space;
-//ADC
+//ADC ADJUST//
 extern float voltage0;
 extern float voltage1;
 extern float voltage2;
@@ -24,8 +24,12 @@ extern float voltage1_adc;
 extern float voltage2_adc;
 extern float voltage3_adc;
 extern lv_timer_t* adc_timer;
-//MAIN
+//MAIN SCREEN//
 extern bool USBC_Switch;
 extern bool USBA_Switch;
+//FOR WEB AND WEATHER//
+extern uint8_t UpdateWeater_Time;
+extern uint32_t CityCode;
+extern String qWeather_Key;
 
 #endif

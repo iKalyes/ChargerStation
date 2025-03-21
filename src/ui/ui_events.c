@@ -64,3 +64,13 @@ void USBC1Adjust(lv_event_t * e)
 {
 	// Your code here
 }
+
+void WIFIResrt(lv_event_t * e)
+{
+	// Your code here
+}
+
+void WIFIStart(lv_event_t * e)
+{
+	// Your code here
+}

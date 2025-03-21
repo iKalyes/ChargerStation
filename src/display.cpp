@@ -107,6 +107,9 @@ void style_reset()
     lv_obj_add_style(ui_ADCAdjust, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_Back, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_ADCBack, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_WIFIBack, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_WIFIStart, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_WIFIReset, &style_pr, LV_STATE_PRESSED);
 
 }
 
