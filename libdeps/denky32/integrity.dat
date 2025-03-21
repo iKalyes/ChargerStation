@@ -1,4 +1,9 @@
-mathertel/RotaryEncoder@^1.5.3
 lvgl/lvgl@8.3.11
-bodmer/TFT_eSPI@^2.5.43
+bblanchon/ArduinoJson@^7.3.1
+paulstoffregen/Time@^1.6.1
+mathertel/RotaryEncoder@^1.5.3
 adafruit/Adafruit INA219@^1.2.3
+bodmer/TFT_eSPI@^2.5.43
+arduino-libraries/NTPClient@^3.2.1
+nodaoli/ArduinoUZlib@^1.0.2
+tzapu/WiFiManager@^2.0.17

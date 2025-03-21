@@ -1,0 +1,29 @@
+{
+  "name": "ArduinoUZlib",
+  "version": "1.0.2",
+  "description": "一个用于解压缩 gzip 流的库",
+  "keywords": "ArduinoUZlib, Arduino, decompress, uzlib",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/icewolf-li/ArduinoUZlib"
+  },
+  "authors":
+  [
+    {
+      "name": "icewolf-li",
+      "email": "leegwocheng@outlook.com"
+    },
+    {
+      "name": "tignioj",
+      "url": "https://github.com/tignioj",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/icewolf-li/ArduinoUZlib",
+  "dependencies": {
+  },
+  "frameworks": "*",
+  "platforms": "Espressif_32, Espressif_8266"
+}
