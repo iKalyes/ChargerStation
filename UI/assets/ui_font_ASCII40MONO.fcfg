@@ -1,16 +1,16 @@
 {
   "codename": "ASCII40MONO",
   "ttf_path": "/assets/SarasaMonoSC-Bold.ttf",
-  "bin_path": "/assets/ui_font_ASCII40MONO.bin",
-  "c_path": "/assets/ui_font_ASCII40MONO.c",
-  "cfg_path": "/assets/ui_font_ASCII40MONO.fcfg",
+  "bin_path": "/assets\\ui_font_ASCII40MONO.bin",
+  "c_path": "/assets\\ui_font_ASCII40MONO.c",
+  "cfg_path": "/assets\\ui_font_ASCII40MONO.fcfg",
   "size": 40,
   "bpp": 8,
   "letters": 0,
   "ranges": [
     "0x20-0x7f"
   ],
-  "symbols": "",
+  "symbols": "℃",
   "customparams": "--no-compress --no-prefilter",
   "uploaded": false
 }

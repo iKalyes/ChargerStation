@@ -6,7 +6,7 @@ Weather::Weather(String apiKey, String location)
     this->location = location;
 }
 
-bool Weather::update()
+bool Weather::updateWeather()
 {
     HTTPClient http;   //用于访问网络
     WiFiClient *stream;
@@ -43,8 +43,12 @@ int Weather::getTemp()
     return now["temp"].as<int>();
 }
 
-//获取天气数据中的天气标识代码
 int Weather::getWeather()
 {
     return now["icon"].as<int>();
+}
+
+int Weather::getHumidity()
+{
+    return now["humidity"].as<int>();
 }

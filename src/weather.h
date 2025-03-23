@@ -11,11 +11,11 @@ class Weather
 {
     public:
         Weather(String apiKey, String location);
-        bool update();  //发送一次请求信息，获取天气数据
+        bool updateWeather();  //发送一次请求信息，获取天气数据
 
-        //只需要今明日的天气与温度，故仅设置了以下若干函数
         int getTemp();
         int getWeather();
+        int getHumidity();
     private:
         String apiKey;                  //天气API密钥
         String location;                //地点

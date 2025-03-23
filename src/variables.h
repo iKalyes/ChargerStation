@@ -31,5 +31,13 @@ extern bool USBA_Switch;
 extern uint8_t UpdateWeater_Time;
 extern uint32_t CityCode;
 extern String qWeather_Key;
+extern uint8_t TimeZone;
+extern String NTPServer;
+struct config_type
+{
+    char sta_ssid[32];
+    char sta_pwd[64];
+};
+extern config_type wifisetting;
 
 #endif

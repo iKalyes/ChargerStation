@@ -9,6 +9,8 @@
 #include <gpio.h>
 #include <lvgl.h>
 
+void flash_init();
+
 void get_free_space();
 void save_setting();
 void load_setting();
@@ -16,6 +18,10 @@ void save_USBA_setting();
 void save_USBC_setting();
 void save_adc_setting();
 
-void flash_init();
+void save_web_config();
+void load_web_config();
+void save_wifi_config();
+void load_wifi_config();
+void delete_wifi_config();
 
 #endif

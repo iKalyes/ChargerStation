@@ -2,6 +2,12 @@
 
 Preferences flash;
 
+void flash_init()
+{
+    get_free_space(); /* Get the free space of the flash */
+    load_setting(); /* Load the setting from the flash */
+}
+
 void get_free_space()
 {
     flash.begin("setting");
@@ -59,8 +65,56 @@ void save_adc_setting()
     flash.end();
 }
 
-void flash_init()
+void save_web_config()
 {
-    get_free_space(); /* Get the free space of the flash */
-    load_setting(); /* Load the setting from the flash */
+    flash.begin("setting");
+    flash.putUInt("UpdateWeater_Time", UpdateWeater_Time);
+    flash.putUInt("CityCode", CityCode);
+    flash.putString("qWeather_Key", qWeather_Key);
+    flash.putUInt("TimeZone", TimeZone);
+    flash.putString("NTPServer", NTPServer);
+    flash.end();
+}
+
+void load_web_config()
+{
+    flash.begin("setting");
+    UpdateWeater_Time = flash.getUInt("UpdateWeater_Time", 10);
+    uint32_t CityCode_Temp = flash.getUInt("CityCode", 101280101);
+    if(CityCode_Temp>=101000000 && CityCode_Temp<=102000000)
+    {
+        CityCode = CityCode_Temp;
+    }
+    else
+    {
+        CityCode = 101280101;
+    }
+    qWeather_Key = flash.getString("qWeather_Key", "");
+    TimeZone = flash.getUInt("TimeZone", 8);
+    NTPServer = flash.getString("NTPServer", "cn.ntp.org.cn");
+    flash.end();
+}
+
+void save_wifi_config()
+{
+    flash.begin("setting");
+    flash.putString("sta_ssid", wifisetting.sta_ssid);
+    flash.putString("sta_pwd", wifisetting.sta_pwd);
+    flash.end();
+}
+
+void load_wifi_config()
+{
+    flash.begin("setting");
+    strcpy(wifisetting.sta_ssid, flash.getString("sta_ssid", "").c_str());
+    strcpy(wifisetting.sta_pwd, flash.getString("sta_pwd", "").c_str());
+    flash.end();
+}
+
+void delete_wifi_config()
+{
+    flash.begin("setting");
+    flash.remove("sta_ssid");
+    flash.remove("sta_pwd");
+    flash.end();
 }

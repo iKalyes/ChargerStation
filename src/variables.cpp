@@ -26,4 +26,7 @@ bool USBA_Switch = false;
 //FOR WEB AND WEATHER//
 uint8_t UpdateWeater_Time = 10; //10分钟更新
 uint32_t CityCode = 101280101; //广州
-String qWeather_Key;
+String qWeather_Key = "";
+uint8_t TimeZone = 8;
+String NTPServer = "cn.ntp.org.cn";
+config_type wifisetting ={{""},{""}};
