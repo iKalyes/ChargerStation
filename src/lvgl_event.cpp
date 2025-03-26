@@ -39,6 +39,15 @@ if ( event_code == LV_EVENT_PRESSED) {
 }
 }
 
+void ui_event_Weather( lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+if ( event_code == LV_EVENT_PRESSED) {
+      _ui_screen_change( &ui_WeatherScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_WeatherScreen_screen_init);
+      lvgl_group_to_weather();
+}
+}
+
 void ui_event_ADCAdjust(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -183,3 +192,20 @@ void ui_event_WIFIBack(lv_event_t * e)
     }
 }
 
+void ui_event_WeatherBack( lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+if ( event_code == LV_EVENT_PRESSED) {
+      _ui_screen_change( &ui_MainScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_MainScreen_screen_init);
+      lvgl_group_to_main();
+}
+}
+
+void ui_event_WeatherSetting( lv_event_t * e) {
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+if ( event_code == LV_EVENT_PRESSED) {
+      _ui_screen_change( &ui_SettingScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_SettingScreen_screen_init);
+      lvgl_group_to_setting();
+}
+}

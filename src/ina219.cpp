@@ -33,4 +33,8 @@ void ina219_task(lv_timer_t *timer)
     lv_label_set_text_fmt(ui_Voltage, "%02d.%02d", voltage_int, voltage_frac);
     lv_label_set_text_fmt(ui_Current, "%02d.%02d", current_int, current_frac);
     lv_label_set_text_fmt(ui_Power, "%03d.%01d", power_int, power_frac);
+
+    lv_label_set_text_fmt(ui_WVoltage, "%02d.%02dV", voltage_int, voltage_frac);
+    lv_label_set_text_fmt(ui_WCurrent, "%02d.%02dA", current_int, current_frac);
+    lv_label_set_text_fmt(ui_WPower, "%03d.%01dW", power_int, power_frac);
 }

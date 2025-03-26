@@ -68,18 +68,17 @@ void save_adc_setting()
 void save_web_config()
 {
     flash.begin("setting");
-    flash.putUInt("UpdateWeater_Time", UpdateWeater_Time);
     flash.putUInt("CityCode", CityCode);
     flash.putString("qWeather_Key", qWeather_Key);
     flash.putUInt("TimeZone", TimeZone);
     flash.putString("NTPServer", NTPServer);
+    flash.putUInt("SyncTime", SyncTime);
     flash.end();
 }
 
 void load_web_config()
 {
     flash.begin("setting");
-    UpdateWeater_Time = flash.getUInt("UpdateWeater_Time", 10);
     uint32_t CityCode_Temp = flash.getUInt("CityCode", 101280101);
     if(CityCode_Temp>=101000000 && CityCode_Temp<=102000000)
     {
@@ -91,7 +90,8 @@ void load_web_config()
     }
     qWeather_Key = flash.getString("qWeather_Key", "");
     TimeZone = flash.getUInt("TimeZone", 8);
-    NTPServer = flash.getString("NTPServer", "cn.ntp.org.cn");
+    NTPServer = flash.getString("NTPServer", "pool.ntp.org");
+    SyncTime = flash.getUInt("SyncTime", 1);
     flash.end();
 }
 

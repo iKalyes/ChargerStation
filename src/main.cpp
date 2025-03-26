@@ -1,9 +1,5 @@
 #include <main.h>
 
-
-
-
-
 void setup()
 {
     Serial.begin( 115200 ); /* prepare for possible serial debug */
@@ -18,25 +14,12 @@ void setup()
 
     load_web_config(); /* Load the web configuration */
 
-    delay(1000);
-
-    Serial.print("CityCode = ");
-    Serial.println(CityCode);
-
-    Serial.print("WeaterUpdateTime = ");
-    Serial.println(UpdateWeater_Time);
-
-    Serial.print("qWeatherKey = ");
-    Serial.println(qWeather_Key);
-
-    Serial.print("TimeZone = ");
-    Serial.println(TimeZone);
-
-    Serial.print("NTPServer = ");
-    Serial.println(NTPServer);
+    wificonnect(); /* Connect to the wifi */
+    time_server_init(NTPServer.c_str(), TimeZone, SyncTime); /* Initialize the time server */
 }
 
 void loop()
 {
     display_task(); /* let the GUI do its work */
+    time_server_update();
 }

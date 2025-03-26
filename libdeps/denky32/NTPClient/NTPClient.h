@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Arduino.h"
-
+#include <lvgl.h>
 #include <Udp.h>
 
 #define SEVENZYYEARS 2208988800UL

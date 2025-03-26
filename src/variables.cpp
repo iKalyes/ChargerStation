@@ -24,9 +24,10 @@ lv_timer_t* adc_timer = NULL;
 bool USBC_Switch = false;
 bool USBA_Switch = false;
 //FOR WEB AND WEATHER//
-uint8_t UpdateWeater_Time = 10; //10分钟更新
+uint16_t UpdateWeater_Time = 10; //10分钟更新
 uint32_t CityCode = 101280101; //广州
 String qWeather_Key = "";
 uint8_t TimeZone = 8;
-String NTPServer = "cn.ntp.org.cn";
+uint8_t SyncTime = 1;
+String NTPServer = "pool.ntp.org";
 config_type wifisetting ={{""},{""}};

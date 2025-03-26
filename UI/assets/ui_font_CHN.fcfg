@@ -1,0 +1,16 @@
+{
+  "codename": "CHN",
+  "ttf_path": "/assets/SarasaMonoSC-Bold.ttf",
+  "bin_path": "/assets/ui_font_CHN.bin",
+  "c_path": "/assets/ui_font_CHN.c",
+  "cfg_path": "/assets/ui_font_CHN.fcfg",
+  "size": 26,
+  "bpp": 4,
+  "letters": 5,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "晴多云少间阴阵雨强雷伴有冰雹小中大极端降毛细暴特冻到雪夹天气薄雾霾扬沙浮尘浓度重严热冷未知日月周一二三四五六",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

@@ -67,6 +67,8 @@ void style_reset()
     lv_obj_set_style_outline_width(ui_USBASwitch, 3, LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_color(ui_Setting, lv_color_hex(0xffffff), LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_width(ui_Setting, 3, LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_color(ui_Weather, lv_color_hex(0xffffff), LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(ui_Weather, 3, LV_STATE_FOCUS_KEY);
     
     lv_obj_set_style_outline_color(ui_WiFiWebPage, lv_color_hex(0xffffff), LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_width(ui_WiFiWebPage, 2, LV_STATE_FOCUS_KEY);
@@ -98,11 +100,24 @@ void style_reset()
     lv_obj_set_style_outline_color(ui_ADCBack, lv_color_hex(0xffff00), LV_STATE_FOCUS_KEY);
     lv_obj_set_style_outline_width(ui_ADCBack, 3, LV_STATE_FOCUS_KEY);
 
+    lv_obj_set_style_outline_color(ui_WIFIStart, lv_color_hex(0xffffff), LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(ui_WIFIStart, 2, LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_color(ui_WIFIReset, lv_color_hex(0xffffff), LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(ui_WIFIReset, 2, LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_color(ui_WIFIBack, lv_color_hex(0xffff00), LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(ui_WIFIBack, 3, LV_STATE_FOCUS_KEY);
+
+    lv_obj_set_style_outline_color(ui_WeatherBack, lv_color_hex(0xffff00), LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(ui_WeatherBack, 3, LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_color(ui_WeatherSetting, lv_color_hex(0xffff00), LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(ui_WeatherSetting, 3, LV_STATE_FOCUS_KEY);
+
     static lv_style_t style_pr;
     lv_style_init(&style_pr);
     lv_style_set_transform_width(&style_pr, 0);
     lv_style_set_transform_height(&style_pr, 0);
     lv_obj_add_style(ui_WiFiWebPage, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_Weather, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_Setting, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_ADCAdjust, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_Back, &style_pr, LV_STATE_PRESSED);
@@ -110,7 +125,8 @@ void style_reset()
     lv_obj_add_style(ui_WIFIBack, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_WIFIStart, &style_pr, LV_STATE_PRESSED);
     lv_obj_add_style(ui_WIFIReset, &style_pr, LV_STATE_PRESSED);
-
+    lv_obj_add_style(ui_WeatherBack, &style_pr, LV_STATE_PRESSED);
+    lv_obj_add_style(ui_WeatherSetting, &style_pr, LV_STATE_PRESSED);
 }
 
 void setting_reset()

@@ -1,0 +1,19 @@
+#ifndef _TIME_SERVER_H_
+#define _TIME_SERVER_H_
+
+#include <NTPClient.h>
+#include <WiFiUdp.h>
+#include <WiFi.h>
+
+#include <variables.h>
+#include <weather.h>
+#include <lvgl.h>
+#include "ui/ui.h"
+
+void time_server_init(const char* poolServerName, long timeOffset, unsigned long updateInterval);
+void time_server_setting(const char* poolServerName, long timeOffset, unsigned long updateInterval);
+void time_server_refresh(lv_timer_t *timer);
+void time_server_update();
+void time_server_forceupdate();
+
+#endif

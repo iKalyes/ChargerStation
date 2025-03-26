@@ -10,13 +10,9 @@
 #include <lvgl_group.h>
 #include <lvgl_event.h>
 #include <variables.h>
-
 #include <flash.h>
 #include <gpio.h>
-
-#include <HTTPClient.h>
-#include <WiFiUdp.h>
-#include <ArduinoJson.h>
-#include <TimeLib.h>
+#include <wifi_server.h>
+#include <time_server.h>
 
 #endif

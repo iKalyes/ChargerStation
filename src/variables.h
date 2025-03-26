@@ -28,10 +28,11 @@ extern lv_timer_t* adc_timer;
 extern bool USBC_Switch;
 extern bool USBA_Switch;
 //FOR WEB AND WEATHER//
-extern uint8_t UpdateWeater_Time;
+extern uint16_t UpdateWeater_Time;
 extern uint32_t CityCode;
 extern String qWeather_Key;
 extern uint8_t TimeZone;
+extern uint8_t SyncTime;
 extern String NTPServer;
 struct config_type
 {

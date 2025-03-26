@@ -7,193 +7,173 @@
 
 void ui_WiFiScreen_screen_init(void)
 {
-    ui_WiFiScreen = lv_obj_create(NULL);
-    lv_obj_clear_flag(ui_WiFiScreen, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_WiFiScreen, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_WiFiScreen, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_WiFiScreen = lv_obj_create(NULL);
+lv_obj_clear_flag( ui_WiFiScreen, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_bg_color(ui_WiFiScreen, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_WiFiScreen, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_WIFIHeader = lv_obj_create(ui_WiFiScreen);
-    lv_obj_remove_style_all(ui_WIFIHeader);
-    lv_obj_set_width(ui_WIFIHeader, 236);
-    lv_obj_set_height(ui_WIFIHeader, 32);
-    lv_obj_set_x(ui_WIFIHeader, 0);
-    lv_obj_set_y(ui_WIFIHeader, 2);
-    lv_obj_set_align(ui_WIFIHeader, LV_ALIGN_TOP_MID);
-    lv_obj_clear_flag(ui_WIFIHeader, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_WIFIHeader, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_WIFIHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
-                                           _ui_theme_color_Container);
-    ui_object_set_themeable_style_property(ui_WIFIHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
-                                           _ui_theme_alpha_Container);
+ui_WIFIHeader = lv_obj_create(ui_WiFiScreen);
+lv_obj_remove_style_all(ui_WIFIHeader);
+lv_obj_set_width( ui_WIFIHeader, 236);
+lv_obj_set_height( ui_WIFIHeader, 32);
+lv_obj_set_x( ui_WIFIHeader, 0 );
+lv_obj_set_y( ui_WIFIHeader, 2 );
+lv_obj_set_align( ui_WIFIHeader, LV_ALIGN_TOP_MID );
+lv_obj_clear_flag( ui_WIFIHeader, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_WIFIHeader, 5, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_object_set_themeable_style_property(ui_WIFIHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_Container);
+ui_object_set_themeable_style_property(ui_WIFIHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_OPA, _ui_theme_alpha_Container);
 
-    ui_TextWIFIHeader = lv_label_create(ui_WIFIHeader);
-    lv_obj_set_width(ui_TextWIFIHeader, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TextWIFIHeader, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_TextWIFIHeader, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_TextWIFIHeader, "WiFi Setting");
-    ui_object_set_themeable_style_property(ui_TextWIFIHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_Text_Switch);
-    ui_object_set_themeable_style_property(ui_TextWIFIHeader, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_Text_Switch);
-    lv_obj_set_style_text_font(ui_TextWIFIHeader, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_TextWIFIHeader = lv_label_create(ui_WIFIHeader);
+lv_obj_set_width( ui_TextWIFIHeader, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TextWIFIHeader, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_align( ui_TextWIFIHeader, LV_ALIGN_CENTER );
+lv_label_set_text(ui_TextWIFIHeader,"WiFi Setting");
+ui_object_set_themeable_style_property(ui_TextWIFIHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
+ui_object_set_themeable_style_property(ui_TextWIFIHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
+lv_obj_set_style_text_font(ui_TextWIFIHeader, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_WIFIBack = lv_btn_create(ui_WiFiScreen);
-    lv_obj_set_width(ui_WIFIBack, 236);
-    lv_obj_set_height(ui_WIFIBack, 24);
-    lv_obj_set_x(ui_WIFIBack, 0);
-    lv_obj_set_y(ui_WIFIBack, -2);
-    lv_obj_set_align(ui_WIFIBack, LV_ALIGN_BOTTOM_MID);
-    lv_obj_add_flag(ui_WIFIBack, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WIFIBack, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    ui_object_set_themeable_style_property(ui_WIFIBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
-                                           _ui_theme_color_BG_Button);
-    ui_object_set_themeable_style_property(ui_WIFIBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
-                                           _ui_theme_alpha_BG_Button);
+ui_WIFIBack = lv_btn_create(ui_WiFiScreen);
+lv_obj_set_width( ui_WIFIBack, 236);
+lv_obj_set_height( ui_WIFIBack, 24);
+lv_obj_set_x( ui_WIFIBack, 0 );
+lv_obj_set_y( ui_WIFIBack, -2 );
+lv_obj_set_align( ui_WIFIBack, LV_ALIGN_BOTTOM_MID );
+lv_obj_add_flag( ui_WIFIBack, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_clear_flag( ui_WIFIBack, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+ui_object_set_themeable_style_property(ui_WIFIBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_BG_Button);
+ui_object_set_themeable_style_property(ui_WIFIBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_OPA, _ui_theme_alpha_BG_Button);
 
-    ui_ImageWIFIBack = lv_img_create(ui_WIFIBack);
-    lv_img_set_src(ui_ImageWIFIBack, &ui_img_852573520);
-    lv_obj_set_width(ui_ImageWIFIBack, LV_SIZE_CONTENT);   /// 32
-    lv_obj_set_height(ui_ImageWIFIBack, LV_SIZE_CONTENT);    /// 32
-    lv_obj_set_x(ui_ImageWIFIBack, -30);
-    lv_obj_set_y(ui_ImageWIFIBack, 0);
-    lv_obj_set_align(ui_ImageWIFIBack, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_ImageWIFIBack, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_ImageWIFIBack, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+ui_TextWIFIBack = lv_label_create(ui_WIFIBack);
+lv_obj_set_width( ui_TextWIFIBack, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TextWIFIBack, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_align( ui_TextWIFIBack, LV_ALIGN_CENTER );
+lv_label_set_text(ui_TextWIFIBack,"BACK");
+ui_object_set_themeable_style_property(ui_TextWIFIBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
+ui_object_set_themeable_style_property(ui_TextWIFIBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
+lv_obj_set_style_text_font(ui_TextWIFIBack, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_TextWIFIBack = lv_label_create(ui_WIFIBack);
-    lv_obj_set_width(ui_TextWIFIBack, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TextWIFIBack, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_TextWIFIBack, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_TextWIFIBack, "BACK");
-    ui_object_set_themeable_style_property(ui_TextWIFIBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR,
-                                           _ui_theme_color_Text_Switch);
-    ui_object_set_themeable_style_property(ui_TextWIFIBack, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA,
-                                           _ui_theme_alpha_Text_Switch);
-    lv_obj_set_style_text_font(ui_TextWIFIBack, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_WIFISettingDock = lv_obj_create(ui_WiFiScreen);
+lv_obj_remove_style_all(ui_WIFISettingDock);
+lv_obj_set_width( ui_WIFISettingDock, 236);
+lv_obj_set_height( ui_WIFISettingDock, 172);
+lv_obj_set_x( ui_WIFISettingDock, 0 );
+lv_obj_set_y( ui_WIFISettingDock, 38 );
+lv_obj_set_align( ui_WIFISettingDock, LV_ALIGN_TOP_MID );
+lv_obj_clear_flag( ui_WIFISettingDock, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_WIFISettingDock, 5, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_object_set_themeable_style_property(ui_WIFISettingDock, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_COLOR, _ui_theme_color_Container);
+ui_object_set_themeable_style_property(ui_WIFISettingDock, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_BG_OPA, _ui_theme_alpha_Container);
 
-    ui_WIFISettingDock = lv_obj_create(ui_WiFiScreen);
-    lv_obj_remove_style_all(ui_WIFISettingDock);
-    lv_obj_set_width(ui_WIFISettingDock, 236);
-    lv_obj_set_height(ui_WIFISettingDock, 172);
-    lv_obj_set_x(ui_WIFISettingDock, 0);
-    lv_obj_set_y(ui_WIFISettingDock, 38);
-    lv_obj_set_align(ui_WIFISettingDock, LV_ALIGN_TOP_MID);
-    lv_obj_clear_flag(ui_WIFISettingDock, LV_OBJ_FLAG_CLICKABLE | LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_WIFISettingDock, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
-    ui_object_set_themeable_style_property(ui_WIFISettingDock, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_COLOR,
-                                           _ui_theme_color_Container);
-    ui_object_set_themeable_style_property(ui_WIFISettingDock, LV_PART_MAIN | LV_STATE_DEFAULT, LV_STYLE_BG_OPA,
-                                           _ui_theme_alpha_Container);
+ui_WIFIStart = lv_btn_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_WIFIStart, 228);
+lv_obj_set_height( ui_WIFIStart, 28);
+lv_obj_set_x( ui_WIFIStart, 0 );
+lv_obj_set_y( ui_WIFIStart, -40 );
+lv_obj_set_align( ui_WIFIStart, LV_ALIGN_BOTTOM_MID );
+lv_obj_add_flag( ui_WIFIStart, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_clear_flag( ui_WIFIStart, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_WIFIStart, 5, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_WIFIStart, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_WIFIStart, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_WIFIStart = lv_btn_create(ui_WIFISettingDock);
-    lv_obj_set_width(ui_WIFIStart, 228);
-    lv_obj_set_height(ui_WIFIStart, 28);
-    lv_obj_set_x(ui_WIFIStart, 0);
-    lv_obj_set_y(ui_WIFIStart, -40);
-    lv_obj_set_align(ui_WIFIStart, LV_ALIGN_BOTTOM_MID);
-    lv_obj_add_flag(ui_WIFIStart, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WIFIStart, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_WIFIStart, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_WIFIStart, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_WIFIStart, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_TextWIFIStart = lv_label_create(ui_WIFIStart);
+lv_obj_set_width( ui_TextWIFIStart, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TextWIFIStart, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_align( ui_TextWIFIStart, LV_ALIGN_CENTER );
+lv_label_set_text(ui_TextWIFIStart,"Start WiFi Config");
+lv_obj_set_style_text_font(ui_TextWIFIStart, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_TextWIFIStart = lv_label_create(ui_WIFIStart);
-    lv_obj_set_width(ui_TextWIFIStart, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TextWIFIStart, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_TextWIFIStart, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_TextWIFIStart, "Start WiFi Config");
-    lv_obj_set_style_text_font(ui_TextWIFIStart, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_WIFIReset = lv_btn_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_WIFIReset, 228);
+lv_obj_set_height( ui_WIFIReset, 28);
+lv_obj_set_x( ui_WIFIReset, 0 );
+lv_obj_set_y( ui_WIFIReset, -4 );
+lv_obj_set_align( ui_WIFIReset, LV_ALIGN_BOTTOM_MID );
+lv_obj_add_flag( ui_WIFIReset, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_clear_flag( ui_WIFIReset, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_WIFIReset, 5, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_WIFIReset, lv_color_hex(0xFF0000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_WIFIReset, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_WIFIReset = lv_btn_create(ui_WIFISettingDock);
-    lv_obj_set_width(ui_WIFIReset, 228);
-    lv_obj_set_height(ui_WIFIReset, 28);
-    lv_obj_set_x(ui_WIFIReset, 0);
-    lv_obj_set_y(ui_WIFIReset, -4);
-    lv_obj_set_align(ui_WIFIReset, LV_ALIGN_BOTTOM_MID);
-    lv_obj_add_flag(ui_WIFIReset, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WIFIReset, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_radius(ui_WIFIReset, 5, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_WIFIReset, lv_color_hex(0xFF0000), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_opa(ui_WIFIReset, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_TextWIFIReset = lv_label_create(ui_WIFIReset);
+lv_obj_set_width( ui_TextWIFIReset, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TextWIFIReset, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_align( ui_TextWIFIReset, LV_ALIGN_CENTER );
+lv_label_set_text(ui_TextWIFIReset,"Reset WiFi Config");
+lv_obj_set_style_text_font(ui_TextWIFIReset, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_TextWIFIReset = lv_label_create(ui_WIFIReset);
-    lv_obj_set_width(ui_TextWIFIReset, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TextWIFIReset, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_TextWIFIReset, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_TextWIFIReset, "Reset WiFi Config");
-    lv_obj_set_style_text_font(ui_TextWIFIReset, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_WIFIStatus = lv_label_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_WIFIStatus, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_WIFIStatus, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_WIFIStatus, 0 );
+lv_obj_set_y( ui_WIFIStatus, 2 );
+lv_obj_set_align( ui_WIFIStatus, LV_ALIGN_TOP_MID );
+lv_label_set_text(ui_WIFIStatus,"Connect to The AP");
+lv_obj_set_style_text_font(ui_WIFIStatus, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_WIFIStatus = lv_label_create(ui_WIFISettingDock);
-    lv_obj_set_width(ui_WIFIStatus, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_WIFIStatus, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_WIFIStatus, 0);
-    lv_obj_set_y(ui_WIFIStatus, 2);
-    lv_obj_set_align(ui_WIFIStatus, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_WIFIStatus, "Connect to The AP");
-    lv_obj_set_style_text_font(ui_WIFIStatus, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_TEXTSSID = lv_label_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_TEXTSSID, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TEXTSSID, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_TEXTSSID, 4 );
+lv_obj_set_y( ui_TEXTSSID, -50 );
+lv_obj_set_align( ui_TEXTSSID, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_TEXTSSID,"SSID:");
+lv_obj_set_style_text_font(ui_TEXTSSID, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_TEXTSSID = lv_label_create(ui_WIFISettingDock);
-    lv_obj_set_width(ui_TEXTSSID, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TEXTSSID, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_TEXTSSID, 4);
-    lv_obj_set_y(ui_TEXTSSID, -50);
-    lv_obj_set_align(ui_TEXTSSID, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_TEXTSSID, "SSID:");
-    lv_obj_set_style_text_font(ui_TEXTSSID, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_SSID = lv_label_create(ui_TEXTSSID);
+lv_obj_set_width( ui_SSID, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_SSID, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_SSID, 55 );
+lv_obj_set_y( ui_SSID, 0 );
+lv_obj_set_align( ui_SSID, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_SSID,"ChargingStaion");
+lv_obj_set_style_text_color(ui_SSID, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_SSID, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_SSID, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_SSID = lv_label_create(ui_TEXTSSID);
-    lv_obj_set_width(ui_SSID, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_SSID, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_SSID, 55);
-    lv_obj_set_y(ui_SSID, 0);
-    lv_obj_set_align(ui_SSID, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_SSID, "ChargingStaion");
-    lv_obj_set_style_text_color(ui_SSID, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_SSID, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_SSID, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_TEXTIP = lv_label_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_TEXTIP, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TEXTIP, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_TEXTIP, 4 );
+lv_obj_set_y( ui_TEXTIP, -25 );
+lv_obj_set_align( ui_TEXTIP, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_TEXTIP,"IP:");
+lv_obj_set_style_text_font(ui_TEXTIP, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_TEXTIP = lv_label_create(ui_WIFISettingDock);
-    lv_obj_set_width(ui_TEXTIP, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TEXTIP, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_TEXTIP, 4);
-    lv_obj_set_y(ui_TEXTIP, -25);
-    lv_obj_set_align(ui_TEXTIP, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_TEXTIP, "IP:");
-    lv_obj_set_style_text_font(ui_TEXTIP, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_IPADDR = lv_label_create(ui_TEXTIP);
+lv_obj_set_width( ui_IPADDR, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_IPADDR, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_IPADDR, 55 );
+lv_obj_set_y( ui_IPADDR, 0 );
+lv_obj_set_align( ui_IPADDR, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_IPADDR,"192.168.4.1");
+lv_obj_set_style_text_color(ui_IPADDR, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_IPADDR, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_IPADDR, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_IPADDR = lv_label_create(ui_TEXTIP);
-    lv_obj_set_width(ui_IPADDR, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_IPADDR, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_IPADDR, 55);
-    lv_obj_set_y(ui_IPADDR, 0);
-    lv_obj_set_align(ui_IPADDR, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_IPADDR, "192.168.4.1");
-    lv_obj_set_style_text_color(ui_IPADDR, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_IPADDR, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_IPADDR, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_TEXTRSSI = lv_label_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_TEXTRSSI, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TEXTRSSI, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_TEXTRSSI, 4 );
+lv_obj_set_y( ui_TEXTRSSI, 0 );
+lv_obj_set_align( ui_TEXTRSSI, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_TEXTRSSI,"RSSI:");
+lv_obj_set_style_text_font(ui_TEXTRSSI, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_TEXTRSSI = lv_label_create(ui_WIFISettingDock);
-    lv_obj_set_width(ui_TEXTRSSI, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_TEXTRSSI, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_TEXTRSSI, 4);
-    lv_obj_set_y(ui_TEXTRSSI, 0);
-    lv_obj_set_align(ui_TEXTRSSI, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_TEXTRSSI, "RSSI:");
-    lv_obj_set_style_text_font(ui_TEXTRSSI, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
+ui_RSSI = lv_label_create(ui_TEXTRSSI);
+lv_obj_set_width( ui_RSSI, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_RSSI, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_RSSI, 55 );
+lv_obj_set_y( ui_RSSI, 0 );
+lv_obj_set_align( ui_RSSI, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_RSSI,"NONE");
+lv_obj_set_style_text_color(ui_RSSI, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_RSSI, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_RSSI, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-    ui_RSSI = lv_label_create(ui_TEXTRSSI);
-    lv_obj_set_width(ui_RSSI, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_RSSI, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_RSSI, 55);
-    lv_obj_set_y(ui_RSSI, 0);
-    lv_obj_set_align(ui_RSSI, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_RSSI, "NONE");
-    lv_obj_set_style_text_color(ui_RSSI, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_RSSI, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_RSSI, &ui_font_ASCII20MONO, LV_PART_MAIN | LV_STATE_DEFAULT);
-
-    lv_obj_add_event_cb(ui_WIFIBack, ui_event_WIFIBack, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_WIFIStart, ui_event_WIFIStart, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_WIFIReset, ui_event_WIFIReset, LV_EVENT_ALL, NULL);
+lv_obj_add_event_cb(ui_WIFIBack, ui_event_WIFIBack, LV_EVENT_ALL, NULL);
+lv_obj_add_event_cb(ui_WIFIStart, ui_event_WIFIStart, LV_EVENT_ALL, NULL);
+lv_obj_add_event_cb(ui_WIFIReset, ui_event_WIFIReset, LV_EVENT_ALL, NULL);
 
 }
