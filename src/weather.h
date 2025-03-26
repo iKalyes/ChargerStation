@@ -10,11 +10,14 @@
 class Weather
 {
     public:
-        Weather(String apiKey, String location);
+        Weather();
+        void SetApi(String apiKey);
+        void SetLocation(String location);
         bool updateWeather();  //发送一次请求信息，获取天气数据
 
         int getTemp();
         int getWeather();
+        String getWeatherText();
         int getHumidity();
     private:
         String apiKey;                  //天气API密钥

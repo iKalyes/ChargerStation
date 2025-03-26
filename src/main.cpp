@@ -16,6 +16,7 @@ void setup()
 
     wificonnect(); /* Connect to the wifi */
     time_server_init(NTPServer.c_str(), TimeZone, SyncTime); /* Initialize the time server */
+    weather_init(qWeather_Key, CityCode); /* Initialize the weather server */
 }
 
 void loop()

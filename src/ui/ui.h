@@ -157,8 +157,8 @@ extern lv_obj_t *ui_TEXTSSID;
 extern lv_obj_t *ui_SSID;
 extern lv_obj_t *ui_TEXTIP;
 extern lv_obj_t *ui_IPADDR;
-extern lv_obj_t *ui_TEXTRSSI;
-extern lv_obj_t *ui_RSSI;
+extern lv_obj_t *ui_TEXTSYNCTIME;
+extern lv_obj_t *ui_SYNCTIME;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_WeatherScreen
@@ -211,6 +211,7 @@ LV_IMG_DECLARE( ui_img_123890670);   // assets/icon-park-outline_sleep.png
 LV_IMG_DECLARE( ui_img_763584403);   // assets/iconamoon_mode-light.png
 LV_IMG_DECLARE( ui_img_f7_thermometer_png);   // assets/f7_thermometer.png
 LV_IMG_DECLARE( ui_img_carbon_humidity_png);   // assets/carbon_humidity.png
+LV_IMG_DECLARE( ui_img_999_png);   // assets/999.png
 LV_IMG_DECLARE( ui_img_100_png);   // assets/100.png
 LV_IMG_DECLARE( ui_img_101_png);   // assets/101.png
 LV_IMG_DECLARE( ui_img_102_png);   // assets/102.png
@@ -272,7 +273,6 @@ LV_IMG_DECLARE( ui_img_514_png);   // assets/514.png
 LV_IMG_DECLARE( ui_img_515_png);   // assets/515.png
 LV_IMG_DECLARE( ui_img_900_png);   // assets/900.png
 LV_IMG_DECLARE( ui_img_901_png);   // assets/901.png
-LV_IMG_DECLARE( ui_img_999_png);   // assets/999.png
 
 // FONTS
 LV_FONT_DECLARE( ui_font_ASCII20MONO);

@@ -1,8 +1,16 @@
 #include "weather.h"
 
-Weather::Weather(String apiKey, String location)
+Weather::Weather()
+{
+}
+
+void Weather::SetApi(String apiKey)
 {
     this->apiKey = apiKey;
+}
+
+void Weather::SetLocation(String location)
+{
     this->location = location;
 }
 
@@ -24,7 +32,7 @@ bool Weather::updateWeather()
     }
     else
     {
-        Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpcode).c_str());
+        return false;
     }
     http.end();   //结束当前连接
     
@@ -46,6 +54,11 @@ int Weather::getTemp()
 int Weather::getWeather()
 {
     return now["icon"].as<int>();
+}
+
+String Weather::getWeatherText()
+{
+    return now["text"].as<String>();
 }
 
 int Weather::getHumidity()

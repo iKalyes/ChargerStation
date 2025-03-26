@@ -138,8 +138,8 @@ lv_obj_t *ui_TEXTSSID;
 lv_obj_t *ui_SSID;
 lv_obj_t *ui_TEXTIP;
 lv_obj_t *ui_IPADDR;
-lv_obj_t *ui_TEXTRSSI;
-lv_obj_t *ui_RSSI;
+lv_obj_t *ui_TEXTSYNCTIME;
+lv_obj_t *ui_SYNCTIME;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_WeatherScreen

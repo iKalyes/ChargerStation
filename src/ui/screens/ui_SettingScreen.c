@@ -30,7 +30,7 @@ lv_obj_set_height( ui_TextSettingHeader, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_TextSettingHeader, 10 );
 lv_obj_set_y( ui_TextSettingHeader, 0 );
 lv_obj_set_align( ui_TextSettingHeader, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_TextSettingHeader,"Setting");
+lv_label_set_text(ui_TextSettingHeader,"系统设置");
 ui_object_set_themeable_style_property(ui_TextSettingHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextSettingHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextSettingHeader, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -84,7 +84,7 @@ lv_obj_set_height( ui_TextWiFiWebPage, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_TextWiFiWebPage, 45 );
 lv_obj_set_y( ui_TextWiFiWebPage, 0 );
 lv_obj_set_align( ui_TextWiFiWebPage, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_TextWiFiWebPage,"WiFi Web Page");
+lv_label_set_text(ui_TextWiFiWebPage,"无线配置界面");
 lv_obj_set_style_text_font(ui_TextWiFiWebPage, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_ADCAdjust = lv_btn_create(ui_SettingDock);
@@ -113,7 +113,7 @@ lv_obj_set_height( ui_TextADCAdjust, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_TextADCAdjust, 45 );
 lv_obj_set_y( ui_TextADCAdjust, 0 );
 lv_obj_set_align( ui_TextADCAdjust, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_TextADCAdjust,"ADC Adjust");
+lv_label_set_text(ui_TextADCAdjust,"接口电压校准");
 lv_obj_set_style_text_font(ui_TextADCAdjust, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_PanelFanSwitch = lv_obj_create(ui_SettingDock);
@@ -142,7 +142,7 @@ lv_obj_set_height( ui_TextFanSwitch, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_TextFanSwitch, 45 );
 lv_obj_set_y( ui_TextFanSwitch, 0 );
 lv_obj_set_align( ui_TextFanSwitch, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_TextFanSwitch,"Fan Switch");
+lv_label_set_text(ui_TextFanSwitch,"散热开关");
 lv_obj_set_style_text_font(ui_TextFanSwitch, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_FanSwitch = lv_switch_create(ui_PanelFanSwitch);
@@ -162,7 +162,7 @@ lv_obj_set_style_bg_color(ui_FanSwitch, lv_color_hex(0x00FF00), LV_PART_KNOB | L
 lv_obj_set_style_bg_opa(ui_FanSwitch, 255, LV_PART_KNOB| LV_STATE_DEFAULT);
 
 ui_SliderSleepTime = lv_slider_create(ui_SettingDock);
-lv_slider_set_range(ui_SliderSleepTime, 0,60);
+lv_slider_set_range(ui_SliderSleepTime, 0,360);
 lv_slider_set_value( ui_SliderSleepTime, 10, LV_ANIM_OFF);
 if (lv_slider_get_mode(ui_SliderSleepTime)==LV_SLIDER_MODE_RANGE ) lv_slider_set_left_value( ui_SliderSleepTime, 0, LV_ANIM_OFF);
 lv_obj_set_width( ui_SliderSleepTime, 224);
@@ -268,7 +268,7 @@ ui_TextBack = lv_label_create(ui_Back);
 lv_obj_set_width( ui_TextBack, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextBack, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextBack, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextBack,"BACK");
+lv_label_set_text(ui_TextBack,"返回");
 ui_object_set_themeable_style_property(ui_TextBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextBack, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);

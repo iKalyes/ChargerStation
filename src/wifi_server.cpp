@@ -50,7 +50,7 @@ String getParam(String name){
 
 void saveParamCallback(){
     //将从页面中获取的数据保存
-    CityCode =  getParam("CityCode").toInt();
+    CityCode =  getParam("CityCode");
     qWeather_Key = getParam("qWeatherKey");
     TimeZone = getParam("TimeZone").toInt();
     NTPServer = getParam("NTPServer");
@@ -58,6 +58,7 @@ void saveParamCallback(){
 
     save_web_config();
     time_server_setting(NTPServer.c_str(), TimeZone, SyncTime);
+    weather_init(qWeather_Key, CityCode);
 
   }
 
@@ -73,10 +74,9 @@ void wificonfig()
         strcpy(wifisetting.sta_pwd, WiFi.psk().c_str());
         save_wifi_config();
 
-        lv_label_set_text(ui_WIFIStatus, "Connected");
+        lv_label_set_text(ui_WIFIStatus, "已连接");
         lv_label_set_text(ui_SSID, WiFi.SSID().c_str());
         lv_label_set_text(ui_IPADDR, WiFi.localIP().toString().c_str());
-        lv_label_set_text(ui_RSSI, String(WiFi.RSSI()).c_str());
 
         lv_img_set_src(ui_ImageWiFi, &ui_img_593743026);
     }
@@ -99,10 +99,9 @@ void wificonnect()
   }
   if(WiFi.status() == WL_CONNECTED)
   {
-    lv_label_set_text(ui_WIFIStatus, "Connected");
+    lv_label_set_text(ui_WIFIStatus, "已连接");
     lv_label_set_text(ui_SSID, WiFi.SSID().c_str());
     lv_label_set_text(ui_IPADDR, WiFi.localIP().toString().c_str());
-    lv_label_set_text(ui_RSSI, String(WiFi.RSSI()).c_str());
 
     lv_img_set_src(ui_ImageWiFi, &ui_img_593743026);
   }

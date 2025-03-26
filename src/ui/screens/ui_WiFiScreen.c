@@ -28,7 +28,7 @@ ui_TextWIFIHeader = lv_label_create(ui_WIFIHeader);
 lv_obj_set_width( ui_TextWIFIHeader, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextWIFIHeader, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextWIFIHeader, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextWIFIHeader,"WiFi Setting");
+lv_label_set_text(ui_TextWIFIHeader,"无线配置界面");
 ui_object_set_themeable_style_property(ui_TextWIFIHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextWIFIHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextWIFIHeader, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -48,7 +48,7 @@ ui_TextWIFIBack = lv_label_create(ui_WIFIBack);
 lv_obj_set_width( ui_TextWIFIBack, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextWIFIBack, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextWIFIBack, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextWIFIBack,"BACK");
+lv_label_set_text(ui_TextWIFIBack,"返回");
 ui_object_set_themeable_style_property(ui_TextWIFIBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextWIFIBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextWIFIBack, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -81,7 +81,7 @@ ui_TextWIFIStart = lv_label_create(ui_WIFIStart);
 lv_obj_set_width( ui_TextWIFIStart, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextWIFIStart, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextWIFIStart, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextWIFIStart,"Start WiFi Config");
+lv_label_set_text(ui_TextWIFIStart,"启动无线配网");
 lv_obj_set_style_text_font(ui_TextWIFIStart, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_WIFIReset = lv_btn_create(ui_WIFISettingDock);
@@ -100,7 +100,7 @@ ui_TextWIFIReset = lv_label_create(ui_WIFIReset);
 lv_obj_set_width( ui_TextWIFIReset, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextWIFIReset, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextWIFIReset, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextWIFIReset,"Reset WiFi Config");
+lv_label_set_text(ui_TextWIFIReset,"清除无线设置");
 lv_obj_set_style_text_font(ui_TextWIFIReset, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_WIFIStatus = lv_label_create(ui_WIFISettingDock);
@@ -109,7 +109,7 @@ lv_obj_set_height( ui_WIFIStatus, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_WIFIStatus, 0 );
 lv_obj_set_y( ui_WIFIStatus, 2 );
 lv_obj_set_align( ui_WIFIStatus, LV_ALIGN_TOP_MID );
-lv_label_set_text(ui_WIFIStatus,"Connect to The AP");
+lv_label_set_text(ui_WIFIStatus,"请连接至热点");
 lv_obj_set_style_text_font(ui_WIFIStatus, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_TEXTSSID = lv_label_create(ui_WIFISettingDock);
@@ -152,25 +152,25 @@ lv_obj_set_style_text_color(ui_IPADDR, lv_color_hex(0x00FF00), LV_PART_MAIN | LV
 lv_obj_set_style_text_opa(ui_IPADDR, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_IPADDR, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_TEXTRSSI = lv_label_create(ui_WIFISettingDock);
-lv_obj_set_width( ui_TEXTRSSI, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_TEXTRSSI, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_TEXTRSSI, 4 );
-lv_obj_set_y( ui_TEXTRSSI, 0 );
-lv_obj_set_align( ui_TEXTRSSI, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_TEXTRSSI,"RSSI:");
-lv_obj_set_style_text_font(ui_TEXTRSSI, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_TEXTSYNCTIME = lv_label_create(ui_WIFISettingDock);
+lv_obj_set_width( ui_TEXTSYNCTIME, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_TEXTSYNCTIME, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_TEXTSYNCTIME, 4 );
+lv_obj_set_y( ui_TEXTSYNCTIME, 0 );
+lv_obj_set_align( ui_TEXTSYNCTIME, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_TEXTSYNCTIME,"TIME:");
+lv_obj_set_style_text_font(ui_TEXTSYNCTIME, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_RSSI = lv_label_create(ui_TEXTRSSI);
-lv_obj_set_width( ui_RSSI, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_RSSI, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_RSSI, 55 );
-lv_obj_set_y( ui_RSSI, 0 );
-lv_obj_set_align( ui_RSSI, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_RSSI,"NONE");
-lv_obj_set_style_text_color(ui_RSSI, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_RSSI, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_RSSI, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_SYNCTIME = lv_label_create(ui_TEXTSYNCTIME);
+lv_obj_set_width( ui_SYNCTIME, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_SYNCTIME, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_SYNCTIME, 55 );
+lv_obj_set_y( ui_SYNCTIME, 0 );
+lv_obj_set_align( ui_SYNCTIME, LV_ALIGN_LEFT_MID );
+lv_label_set_text(ui_SYNCTIME,"00:00:00");
+lv_obj_set_style_text_color(ui_SYNCTIME, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_SYNCTIME, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_SYNCTIME, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 lv_obj_add_event_cb(ui_WIFIBack, ui_event_WIFIBack, LV_EVENT_ALL, NULL);
 lv_obj_add_event_cb(ui_WIFIStart, ui_event_WIFIStart, LV_EVENT_ALL, NULL);

@@ -29,7 +29,7 @@ extern bool USBC_Switch;
 extern bool USBA_Switch;
 //FOR WEB AND WEATHER//
 extern uint16_t UpdateWeater_Time;
-extern uint32_t CityCode;
+extern String CityCode;
 extern String qWeather_Key;
 extern uint8_t TimeZone;
 extern uint8_t SyncTime;

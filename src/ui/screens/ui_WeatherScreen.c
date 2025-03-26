@@ -27,7 +27,7 @@ ui_TextWeatherBack = lv_label_create(ui_WeatherBack);
 lv_obj_set_width( ui_TextWeatherBack, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextWeatherBack, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextWeatherBack, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextWeatherBack,"MAINPAGE");
+lv_label_set_text(ui_TextWeatherBack,"主页");
 ui_object_set_themeable_style_property(ui_TextWeatherBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextWeatherBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextWeatherBack, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -47,7 +47,7 @@ ui_TextWeatherSetting = lv_label_create(ui_WeatherSetting);
 lv_obj_set_width( ui_TextWeatherSetting, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextWeatherSetting, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextWeatherSetting, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextWeatherSetting,"SETTING");
+lv_label_set_text(ui_TextWeatherSetting,"设置");
 ui_object_set_themeable_style_property(ui_TextWeatherSetting, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextWeatherSetting, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextWeatherSetting, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -121,7 +121,7 @@ lv_obj_set_style_border_color(ui_WeatherPanel, lv_color_hex(0x00FFFF), LV_PART_M
 lv_obj_set_style_border_opa(ui_WeatherPanel, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_WeatherICON = lv_img_create(ui_WeatherPanel);
-lv_img_set_src(ui_WeatherICON, &ui_img_100_png);
+lv_img_set_src(ui_WeatherICON, &ui_img_999_png);
 lv_obj_set_width( ui_WeatherICON, LV_SIZE_CONTENT);  /// 64
 lv_obj_set_height( ui_WeatherICON, LV_SIZE_CONTENT);   /// 64
 lv_obj_set_x( ui_WeatherICON, -10 );
@@ -137,7 +137,7 @@ lv_obj_set_height( ui_Week, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Week, 10 );
 lv_obj_set_y( ui_Week, 0 );
 lv_obj_set_align( ui_Week, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_Week,"周日");
+lv_label_set_text(ui_Week,"错误");
 lv_obj_set_style_text_color(ui_Week, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Week, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Week, &ui_font_CHN, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -158,7 +158,7 @@ ui_WeatherCHN = lv_label_create(ui_WheatherCHN0Panel);
 lv_obj_set_width( ui_WeatherCHN, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_WeatherCHN, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_WeatherCHN, LV_ALIGN_CENTER );
-lv_label_set_text(ui_WeatherCHN,"晴");
+lv_label_set_text(ui_WeatherCHN,"错误");
 lv_obj_set_style_text_color(ui_WeatherCHN, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_WeatherCHN, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_WeatherCHN, &ui_font_CHN, LV_PART_MAIN| LV_STATE_DEFAULT);

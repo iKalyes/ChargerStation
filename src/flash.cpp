@@ -68,7 +68,7 @@ void save_adc_setting()
 void save_web_config()
 {
     flash.begin("setting");
-    flash.putUInt("CityCode", CityCode);
+    flash.putString("CityCode", CityCode);
     flash.putString("qWeather_Key", qWeather_Key);
     flash.putUInt("TimeZone", TimeZone);
     flash.putString("NTPServer", NTPServer);
@@ -79,14 +79,14 @@ void save_web_config()
 void load_web_config()
 {
     flash.begin("setting");
-    uint32_t CityCode_Temp = flash.getUInt("CityCode", 101280101);
+    uint32_t CityCode_Temp = (flash.getString("CityCode", "101280101")).toInt();
     if(CityCode_Temp>=101000000 && CityCode_Temp<=102000000)
     {
-        CityCode = CityCode_Temp;
+        CityCode = (String)(CityCode_Temp);
     }
     else
     {
-        CityCode = 101280101;
+        CityCode = "101280101";
     }
     qWeather_Key = flash.getString("qWeather_Key", "");
     TimeZone = flash.getUInt("TimeZone", 8);

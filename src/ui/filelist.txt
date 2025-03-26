@@ -22,6 +22,7 @@ images/ui_img_123890670.c
 images/ui_img_763584403.c
 images/ui_img_f7_thermometer_png.c
 images/ui_img_carbon_humidity_png.c
+images/ui_img_999_png.c
 images/ui_img_100_png.c
 images/ui_img_101_png.c
 images/ui_img_102_png.c
@@ -83,7 +84,6 @@ images/ui_img_514_png.c
 images/ui_img_515_png.c
 images/ui_img_900_png.c
 images/ui_img_901_png.c
-images/ui_img_999_png.c
 fonts/ui_font_ASCII20MONO.c
 fonts/ui_font_ASCII32MONO.c
 fonts/ui_font_ASCII40MONO.c

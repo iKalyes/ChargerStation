@@ -16,4 +16,7 @@ void time_server_refresh(lv_timer_t *timer);
 void time_server_update();
 void time_server_forceupdate();
 
+void weather_init(String apiKey, String location);
+void weather_update();
+
 #endif

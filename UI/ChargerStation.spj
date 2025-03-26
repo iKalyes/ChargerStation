@@ -7254,7 +7254,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "Setting",
+                    "strval": "系统设置",
                     "InheritedType": 10
                   },
                   {
@@ -7927,7 +7927,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "WiFi Web Page",
+                        "strval": "无线配置界面",
                         "InheritedType": 10
                       },
                       {
@@ -8480,7 +8480,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "ADC Adjust",
+                        "strval": "接口电压校准",
                         "InheritedType": 10
                       },
                       {
@@ -8741,8 +8741,7 @@
                     "InheritedType": 4
                   }
                 ],
-                "saved_objtypeKey": "BUTTON",
-                "tree_closed": true
+                "saved_objtypeKey": "BUTTON"
               },
               {
                 "guid": "GUID52585392-683727S883470",
@@ -9034,7 +9033,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "Fan Switch",
+                        "strval": "散热开关",
                         "InheritedType": 10
                       },
                       {
@@ -9982,7 +9981,7 @@
                     "strtype": "SLIDER/Range",
                     "intarray": [
                       0,
-                      60
+                      360
                     ],
                     "InheritedType": 7
                   },
@@ -11140,7 +11139,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "BACK",
+                    "strval": "返回",
                     "InheritedType": 10
                   },
                   {
@@ -11677,7 +11676,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "ADC Adjust",
+                    "strval": "接口电压校准",
                     "InheritedType": 10
                   },
                   {
@@ -15098,7 +15097,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "BACK",
+                    "strval": "返回",
                     "InheritedType": 10
                   },
                   {
@@ -15635,7 +15634,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "WiFi Setting",
+                    "strval": "无线配置界面",
                     "InheritedType": 10
                   },
                   {
@@ -15970,7 +15969,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "BACK",
+                    "strval": "返回",
                     "InheritedType": 10
                   },
                   {
@@ -16371,7 +16370,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "Start WiFi Config",
+                        "strval": "启动无线配网",
                         "InheritedType": 10
                       },
                       {
@@ -16748,7 +16747,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "Reset WiFi Config",
+                        "strval": "清除无线设置",
                         "InheritedType": 10
                       },
                       {
@@ -17121,7 +17120,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "Connect to The AP",
+                    "strval": "请连接至热点",
                     "InheritedType": 10
                   },
                   {
@@ -17827,7 +17826,7 @@
                       {
                         "nid": 10,
                         "strtype": "OBJECT/Name",
-                        "strval": "RSSI",
+                        "strval": "SYNCTIME",
                         "InheritedType": 10
                       },
                       {
@@ -17941,7 +17940,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "NONE",
+                        "strval": "00:00:00",
                         "InheritedType": 10
                       },
                       {
@@ -17994,7 +17993,7 @@
                   {
                     "nid": 10,
                     "strtype": "OBJECT/Name",
-                    "strval": "TEXTRSSI",
+                    "strval": "TEXTSYNCTIME",
                     "InheritedType": 10
                   },
                   {
@@ -18108,7 +18107,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "RSSI:",
+                    "strval": "TIME:",
                     "InheritedType": 10
                   },
                   {
@@ -18568,7 +18567,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "MAINPAGE",
+                    "strval": "主页",
                     "InheritedType": 10
                   },
                   {
@@ -18965,7 +18964,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "SETTING",
+                    "strval": "设置",
                     "InheritedType": 10
                   },
                   {
@@ -20036,7 +20035,7 @@
                       {
                         "nid": 1020,
                         "strtype": "IMAGE/Asset",
-                        "strval": "assets/100.png",
+                        "strval": "assets/999.png",
                         "InheritedType": 5
                       },
                       {
@@ -20191,7 +20190,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "周日",
+                        "strval": "错误",
                         "InheritedType": 10
                       },
                       {
@@ -20519,7 +20518,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "晴",
+                        "strval": "错误",
                         "InheritedType": 10
                       },
                       {
@@ -23062,7 +23061,7 @@
     "uiExportFolderPath": "/Users/quin/Documents/ChargingStation2.2/src/ui",
     "projectExportFolderPath": "/Users/quin/Documents/ChargingStation2.2",
     "custom_variable_prefix": "uic",
-    "backup_cnt": 38,
+    "backup_cnt": 43,
     "autosave_cnt": 0,
     "group_color_cnt": 0,
     "lvgl_version": "8.3.11",

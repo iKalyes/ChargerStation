@@ -28,7 +28,7 @@ ui_TextADCHeader = lv_label_create(ui_ADCHeader);
 lv_obj_set_width( ui_TextADCHeader, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextADCHeader, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextADCHeader, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextADCHeader,"ADC Adjust");
+lv_label_set_text(ui_TextADCHeader,"接口电压校准");
 ui_object_set_themeable_style_property(ui_TextADCHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextADCHeader, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextADCHeader, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -268,7 +268,7 @@ ui_TextADCBack = lv_label_create(ui_ADCBack);
 lv_obj_set_width( ui_TextADCBack, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_TextADCBack, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_TextADCBack, LV_ALIGN_CENTER );
-lv_label_set_text(ui_TextADCBack,"BACK");
+lv_label_set_text(ui_TextADCBack,"返回");
 ui_object_set_themeable_style_property(ui_TextADCBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_TextADCBack, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_TextADCBack, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);

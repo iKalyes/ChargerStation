@@ -25,7 +25,7 @@ bool USBC_Switch = false;
 bool USBA_Switch = false;
 //FOR WEB AND WEATHER//
 uint16_t UpdateWeater_Time = 10; //10分钟更新
-uint32_t CityCode = 101280101; //广州
+String CityCode = "101280101"; //广州
 String qWeather_Key = "";
 uint8_t TimeZone = 8;
 uint8_t SyncTime = 1;
