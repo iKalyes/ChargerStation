@@ -9,8 +9,7 @@ lv_timer_t* NTP_Update_timer = NULL;
 
 void time_server_init(const char* poolServerName, long timeOffset, unsigned long updateInterval)
 {
-    timeClient.setPoolServerName(poolServerName);
-    timeClient.setTimeOffset(timeOffset * 3600);
+    timeClient.setPoolServerName(poolServerName);    timeClient.setTimeOffset(timeOffset * 3600);
     timeClient.setUpdateInterval(updateInterval * 3600000);
     timeClient.begin();
     NTP_timer = lv_timer_create(time_server_refresh, 500, NULL);
@@ -24,9 +23,10 @@ void time_server_setting(const char* poolServerName, long timeOffset, unsigned l
 }
 
 uint8_t hour, minute, second, week;
+int reconnect_timer = 0;
 void time_server_refresh(lv_timer_t *timer)
 {
-    if(WiFi.status() == WL_CONNECTED && timeClient.isTimeSet() == true)
+    if(timeClient.isTimeSet() == true)
     {
         hour = timeClient.getHours();
         minute = timeClient.getMinutes();
@@ -42,19 +42,20 @@ void time_server_refresh(lv_timer_t *timer)
     }
 }
 
+int reconnect_wifi_timer = 0;
+int reconnect_wifi_wait = 0;
+int reconnect_ui_timer = 0;
 bool time_server_update_flag;
 void time_server_update()
 {
     if(WiFi.status() == WL_CONNECTED)
     {
         time_server_update_flag = timeClient.update();
+        reconnect_wifi_timer = millis();
+        reconnect_ui_timer = millis();
         if(time_server_update_flag == true)
         {
-            week = timeClient.getDay();
-            hour = timeClient.getHours();
-            minute = timeClient.getMinutes();
-            second = timeClient.getSeconds();
-            lv_label_set_text_fmt(ui_SYNCTIME, "%02d:%02d:%02d", hour, minute, second);
+        weather_update();
             switch (week)
         {
         case 0:
@@ -79,7 +80,60 @@ void time_server_update()
             lv_label_set_text(ui_Week, "周六");
             break;
         }
-        weather_update();
+        }
+    }
+    else
+    {
+        if(millis() - reconnect_ui_timer > 1000)
+        {
+            lv_label_set_text(ui_WIFIStatus, "未连接");
+            lv_label_set_text(ui_SSID, "NONE");
+            lv_label_set_text(ui_IPADDR, "NONE");
+            lv_label_set_text(ui_SYNCTIME, "00:00:00");
+            lv_label_set_text(ui_TextWIFIStart, "启动无线配网");
+            lv_img_set_src(ui_ImageWiFi, &ui_img_1338783594);
+    
+            extern const lv_img_dsc_t* get_weather_icon(int code);
+            const lv_img_dsc_t* weather_icon = get_weather_icon(999);
+          
+            lv_img_set_src(ui_WeatherICON, weather_icon);
+            lv_label_set_text(ui_Temperature, "000℃");
+            lv_label_set_text(ui_Humidity, "000%");
+            lv_label_set_text(ui_WeatherCHN, weather.getWeatherText().c_str());
+    
+            if(timeClient.isTimeSet() == false)
+            {
+                lv_label_set_text(ui_Week, "错误");
+            }
+            lv_label_set_text(ui_WeatherCHN, "错误");
+            reconnect_ui_timer = millis();
+        }
+
+        if(millis() - reconnect_wifi_timer > 60000)
+        {
+            reconnect_wifi_wait = millis();
+            WiFi.begin(wifisetting.sta_ssid, wifisetting.sta_pwd);
+            while(millis() - reconnect_wifi_wait < 5000)
+            {   
+                lv_task_handler();
+            }
+
+            if(WiFi.status() == WL_CONNECTED)
+            {
+                lv_label_set_text(ui_WIFIStatus, "已连接");
+                lv_label_set_text(ui_TextWIFIStart, "更新天气时间");
+                lv_label_set_text(ui_SSID, WiFi.SSID().c_str());
+                lv_label_set_text(ui_IPADDR, WiFi.localIP().toString().c_str());
+
+                lv_img_set_src(ui_ImageWiFi, &ui_img_593743026);
+                time_server_forceupdate();
+                weather_update();
+            }
+            else
+            {
+                reconnect_wifi_timer = millis();
+                WiFi.disconnect();
+            }
         }
     }
 }
@@ -111,6 +165,12 @@ void weather_update()
         lv_label_set_text_fmt(ui_Temperature, "%03d℃", weather.getTemp());
         lv_label_set_text_fmt(ui_Humidity, "%03d%%", weather.getHumidity());
         lv_label_set_text(ui_WeatherCHN, weather.getWeatherText().c_str());
+
+        week = timeClient.getDay();
+        hour = timeClient.getHours();
+        minute = timeClient.getMinutes();
+        second = timeClient.getSeconds();
+        lv_label_set_text_fmt(ui_SYNCTIME, "%02d:%02d:%02d", hour, minute, second);
 }
 
 const lv_img_dsc_t* get_weather_icon(int code)

@@ -31,3 +31,4 @@ uint8_t TimeZone = 8;
 uint8_t SyncTime = 1;
 String NTPServer = "pool.ntp.org";
 config_type wifisetting ={{""},{""}};
+bool wificonfig_flag = false;

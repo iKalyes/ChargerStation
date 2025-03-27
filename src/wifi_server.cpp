@@ -35,7 +35,7 @@ void Webconfig()
 
   bool res;
    res = wm.autoConnect("CharingStation"); // anonymous ap
-  
+
   while(!res);
 }
 
@@ -46,7 +46,7 @@ String getParam(String name){
       value = wm.server->arg(name);
     }
     return value;
-  }
+}
 
 void saveParamCallback(){
     //将从页面中获取的数据保存
@@ -60,13 +60,25 @@ void saveParamCallback(){
     time_server_setting(NTPServer.c_str(), TimeZone, SyncTime);
     weather_init(qWeather_Key, CityCode);
 
-  }
+}
 
 void wificonfig()
 {
+  if(wificonfig_flag == true)
+  {
     while(WiFi.status() != WL_CONNECTED)
     {
-        Webconfig();
+        lv_label_set_text(ui_WIFIStatus, "请连接至热点");
+        lv_label_set_text(ui_SSID, "CharingStation");
+        lv_label_set_text(ui_IPADDR, "192.168.4.1");
+        int count = 0;
+        int count_end = 10000;
+        while(count < count_end)
+        {
+          count++;
+          lv_task_handler();
+        }
+          Webconfig();
     }
     if(WiFi.status() == WL_CONNECTED)
     {
@@ -74,12 +86,22 @@ void wificonfig()
         strcpy(wifisetting.sta_pwd, WiFi.psk().c_str());
         save_wifi_config();
 
+        time_server_forceupdate();
+        weather_update();
+
         lv_label_set_text(ui_WIFIStatus, "已连接");
+        lv_label_set_text(ui_TextWIFIStart, "更新天气时间");
         lv_label_set_text(ui_SSID, WiFi.SSID().c_str());
         lv_label_set_text(ui_IPADDR, WiFi.localIP().toString().c_str());
 
         lv_img_set_src(ui_ImageWiFi, &ui_img_593743026);
+
+        wificonfig_flag = false;
+
+        _ui_screen_change( &ui_MainScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_MainScreen_screen_init);
+        lvgl_group_to_main();
     }
+  }
 }
 
 void wifireset()
@@ -93,13 +115,16 @@ void wificonnect()
 {
   load_wifi_config();
   WiFi.begin(wifisetting.sta_ssid, wifisetting.sta_pwd);
+  WiFi.setAutoReconnect(true);
   while (WiFi.status() != WL_CONNECTED)
   {
     lv_task_handler();
+    wificonfig();
   }
   if(WiFi.status() == WL_CONNECTED)
   {
     lv_label_set_text(ui_WIFIStatus, "已连接");
+    lv_label_set_text(ui_TextWIFIStart, "更新天气时间");
     lv_label_set_text(ui_SSID, WiFi.SSID().c_str());
     lv_label_set_text(ui_IPADDR, WiFi.localIP().toString().c_str());
 

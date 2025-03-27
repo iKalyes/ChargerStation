@@ -40,5 +40,6 @@ struct config_type
     char sta_pwd[64];
 };
 extern config_type wifisetting;
+extern bool wificonfig_flag;
 
 #endif

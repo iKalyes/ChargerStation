@@ -109,7 +109,7 @@ lv_obj_set_height( ui_WIFIStatus, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_WIFIStatus, 0 );
 lv_obj_set_y( ui_WIFIStatus, 2 );
 lv_obj_set_align( ui_WIFIStatus, LV_ALIGN_TOP_MID );
-lv_label_set_text(ui_WIFIStatus,"请连接至热点");
+lv_label_set_text(ui_WIFIStatus,"未连接");
 lv_obj_set_style_text_font(ui_WIFIStatus, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_TEXTSSID = lv_label_create(ui_WIFISettingDock);
@@ -127,7 +127,7 @@ lv_obj_set_height( ui_SSID, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_SSID, 55 );
 lv_obj_set_y( ui_SSID, 0 );
 lv_obj_set_align( ui_SSID, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_SSID,"ChargingStaion");
+lv_label_set_text(ui_SSID,"NONE");
 lv_obj_set_style_text_color(ui_SSID, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_SSID, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_SSID, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -147,7 +147,7 @@ lv_obj_set_height( ui_IPADDR, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_IPADDR, 55 );
 lv_obj_set_y( ui_IPADDR, 0 );
 lv_obj_set_align( ui_IPADDR, LV_ALIGN_LEFT_MID );
-lv_label_set_text(ui_IPADDR,"192.168.4.1");
+lv_label_set_text(ui_IPADDR,"NONE");
 lv_obj_set_style_text_color(ui_IPADDR, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_IPADDR, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_IPADDR, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);

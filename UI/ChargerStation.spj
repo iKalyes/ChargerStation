@@ -17120,7 +17120,7 @@
                   {
                     "nid": 1030,
                     "strtype": "LABEL/Text",
-                    "strval": "请连接至热点",
+                    "strval": "未连接",
                     "InheritedType": 10
                   },
                   {
@@ -17282,7 +17282,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "ChargingStaion",
+                        "strval": "NONE",
                         "InheritedType": 10
                       },
                       {
@@ -17611,7 +17611,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "192.168.4.1",
+                        "strval": "NONE",
                         "InheritedType": 10
                       },
                       {
@@ -17655,7 +17655,8 @@
                         "InheritedType": 11
                       }
                     ],
-                    "saved_objtypeKey": "LABEL"
+                    "saved_objtypeKey": "LABEL",
+                    "tree_closed": true
                   }
                 ],
                 "dont_export": false,

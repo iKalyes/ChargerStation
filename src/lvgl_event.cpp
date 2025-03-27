@@ -168,7 +168,7 @@ void ui_event_WIFIStart(lv_event_t * e)
 
     if(event_code == LV_EVENT_PRESSED) {
         WIFIStart(e);
-        wificonfig();
+        wificonfig_flag = true;
     }
 }
 

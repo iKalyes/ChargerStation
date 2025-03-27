@@ -23,4 +23,5 @@ void loop()
 {
     display_task(); /* let the GUI do its work */
     time_server_update();
+    wificonfig();
 }

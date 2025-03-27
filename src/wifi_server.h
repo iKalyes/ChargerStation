@@ -8,6 +8,7 @@
 
 #include <variables.h>
 #include <time_server.h>
+#include <lvgl_group.h>
 #include <flash.h>
 #include <lvgl.h>
 #include <ui/ui.h>
