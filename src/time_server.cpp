@@ -56,6 +56,12 @@ void time_server_update()
         if(time_server_update_flag == true)
         {
         weather_update();
+
+        week = timeClient.getDay();
+        hour = timeClient.getHours();
+        minute = timeClient.getMinutes();
+        second = timeClient.getSeconds();
+        lv_label_set_text_fmt(ui_SYNCTIME, "%02d:%02d:%02d", hour, minute, second);
             switch (week)
         {
         case 0:
@@ -165,12 +171,6 @@ void weather_update()
         lv_label_set_text_fmt(ui_Temperature, "%03d℃", weather.getTemp());
         lv_label_set_text_fmt(ui_Humidity, "%03d%%", weather.getHumidity());
         lv_label_set_text(ui_WeatherCHN, weather.getWeatherText().c_str());
-
-        week = timeClient.getDay();
-        hour = timeClient.getHours();
-        minute = timeClient.getMinutes();
-        second = timeClient.getSeconds();
-        lv_label_set_text_fmt(ui_SYNCTIME, "%02d:%02d:%02d", hour, minute, second);
 }
 
 const lv_img_dsc_t* get_weather_icon(int code)
