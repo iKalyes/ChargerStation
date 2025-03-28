@@ -10,7 +10,7 @@ void Webconfig()
   delay(1000);
   wm.resetSettings(); // wipe settings
   
-  WiFiManagerParameter  custom_citycode("CityCode","CityCode","101250101",9);
+  WiFiManagerParameter  custom_citycode("CityCode","CityCode","101280101",9);
   WiFiManagerParameter  custom_qweatherkey("qWeatherKey","QWeather User Key","",32);
   WiFiManagerParameter  custom_ntpserver("NTPServer","NTP Server","pool.ntp.org",32);
   WiFiManagerParameter  custom_timezone("TimeZone","Time Zone","8",2);
@@ -62,6 +62,9 @@ void saveParamCallback(){
 
 }
 
+
+bool time_get_strap_unconnect = false;
+int sleep_millis = 0;
 void wificonfig()
 {
   if(wificonfig_flag == true)
@@ -80,6 +83,7 @@ void wificonfig()
         }
           Webconfig();
     }
+
     if(WiFi.status() == WL_CONNECTED)
     {
         strcpy(wifisetting.sta_ssid, WiFi.SSID().c_str());
@@ -100,6 +104,28 @@ void wificonfig()
 
         _ui_screen_change( &ui_MainScreen, LV_SCR_LOAD_ANIM_FADE_ON, 100, 0, &ui_MainScreen_screen_init);
         lvgl_group_to_main();
+    }
+  }
+  else
+  {
+    if(time_get_strap_unconnect == false)
+    {
+      time_get_strap_unconnect = true;
+      sleep_millis = millis();
+    }
+
+    if(sleep_time == 0)
+    {
+      return;
+    }
+    else
+    {
+      if(millis() - sleep_millis >= sleep_time * 60000)
+      {
+        esp_wifi_stop();
+        esp_sleep_enable_ext0_wakeup(GPIO_NUM_4, 0);
+        esp_deep_sleep_start();
+      }
     }
   }
 }

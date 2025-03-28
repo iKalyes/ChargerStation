@@ -163,7 +163,7 @@ lv_obj_set_style_bg_opa(ui_FanSwitch, 255, LV_PART_KNOB| LV_STATE_DEFAULT);
 
 ui_SliderSleepTime = lv_slider_create(ui_SettingDock);
 lv_slider_set_range(ui_SliderSleepTime, 0,360);
-lv_slider_set_value( ui_SliderSleepTime, 10, LV_ANIM_OFF);
+lv_slider_set_value( ui_SliderSleepTime, 0, LV_ANIM_OFF);
 if (lv_slider_get_mode(ui_SliderSleepTime)==LV_SLIDER_MODE_RANGE ) lv_slider_set_left_value( ui_SliderSleepTime, 0, LV_ANIM_OFF);
 lv_obj_set_width( ui_SliderSleepTime, 224);
 lv_obj_set_height( ui_SliderSleepTime, 28);
@@ -202,7 +202,7 @@ lv_obj_set_height( ui_SleepTime, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_SleepTime, -10 );
 lv_obj_set_y( ui_SleepTime, 0 );
 lv_obj_set_align( ui_SleepTime, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_SleepTime,"10M");
+lv_label_set_text(ui_SleepTime,"0M");
 ui_object_set_themeable_style_property(ui_SleepTime, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_COLOR, _ui_theme_color_Text_Switch);
 ui_object_set_themeable_style_property(ui_SleepTime, LV_PART_MAIN| LV_STATE_DEFAULT, LV_STYLE_TEXT_OPA, _ui_theme_alpha_Text_Switch);
 lv_obj_set_style_text_font(ui_SleepTime, &ui_font_ASCII20MONO, LV_PART_MAIN| LV_STATE_DEFAULT);

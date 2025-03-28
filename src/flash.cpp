@@ -30,7 +30,7 @@ void load_setting()
 {
     flash.begin("setting");
     brightness = flash.getUInt("brightness", 128);
-    sleep_time = flash.getUInt("sleep_time", 600);
+    sleep_time = flash.getUInt("sleep_time", 0);
     fan_switch = flash.getBool("fan_switch", false);
     USBC_Switch = flash.getBool("USBC_Switch", false);
     USBA_Switch = flash.getBool("USBA_Switch", false);

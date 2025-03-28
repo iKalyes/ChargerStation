@@ -1,9 +1,11 @@
 #ifndef _TIME_SERVER_H_
 #define _TIME_SERVER_H_
 
+#include <Arduino.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 #include <WiFi.h>
+#include <esp_wifi.h>
 
 #include <variables.h>
 #include <weather.h>
@@ -19,5 +21,7 @@ void time_server_forceupdate();
 
 void weather_init(String apiKey, String location);
 void weather_update();
+
+void deep_sleep();
 
 #endif

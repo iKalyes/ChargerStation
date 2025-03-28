@@ -156,8 +156,8 @@ void setting_reset()
 
     lv_slider_set_value(ui_SliderBrightness, (uint8_t)(brightness / 2.55f + 0.5f), LV_ANIM_OFF);
     lv_label_set_text_fmt(ui_Brightness, "%d%%", (uint8_t)(brightness / 2.55f + 0.5f));
-    lv_slider_set_value(ui_SliderSleepTime, sleep_time / 60, LV_ANIM_OFF);
-    lv_label_set_text_fmt(ui_SleepTime, "%dM", sleep_time / 60);
+    lv_slider_set_value(ui_SliderSleepTime, sleep_time, LV_ANIM_OFF);
+    lv_label_set_text_fmt(ui_SleepTime, "%dM", sleep_time);
     if(fan_switch == true)
     {
         lv_obj_add_state(ui_FanSwitch, LV_STATE_CHECKED);

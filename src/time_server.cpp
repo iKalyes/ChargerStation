@@ -9,7 +9,8 @@ lv_timer_t* NTP_Update_timer = NULL;
 
 void time_server_init(const char* poolServerName, long timeOffset, unsigned long updateInterval)
 {
-    timeClient.setPoolServerName(poolServerName);    timeClient.setTimeOffset(timeOffset * 3600);
+    timeClient.setPoolServerName(poolServerName);    
+    timeClient.setTimeOffset(timeOffset * 3600);
     timeClient.setUpdateInterval(updateInterval * 3600000);
     timeClient.begin();
     NTP_timer = lv_timer_create(time_server_refresh, 500, NULL);
@@ -149,6 +150,35 @@ void time_server_forceupdate()
     if(WiFi.status() == WL_CONNECTED && timeClient.isTimeSet() == false)
     {
         timeClient.forceUpdate();
+        int week_temp = timeClient.getDay();
+        int hour = timeClient.getHours();
+        int minute = timeClient.getMinutes();
+        int second = timeClient.getSeconds();
+        lv_label_set_text_fmt(ui_SYNCTIME, "%02d:%02d:%02d", hour, minute, second);
+        switch (week_temp)
+        {
+        case 0:
+            lv_label_set_text(ui_Week, "周日");
+            break;
+        case 1:
+            lv_label_set_text(ui_Week, "周一");
+            break;
+        case 2:
+            lv_label_set_text(ui_Week, "周二");
+            break;
+        case 3:
+            lv_label_set_text(ui_Week, "周三");
+            break;
+        case 4:
+            lv_label_set_text(ui_Week, "周四");
+            break;
+        case 5:
+            lv_label_set_text(ui_Week, "周五");
+            break;
+        case 6:
+            lv_label_set_text(ui_Week, "周六");
+            break;
+        }
     }
 }
 
@@ -240,5 +270,32 @@ const lv_img_dsc_t* get_weather_icon(int code)
         case 901: return &ui_img_901_png;
         case 999: return &ui_img_999_png;
         default: return &ui_img_999_png; // 默认天气图标
+    }
+}
+
+bool time_get_strap = false;
+int sleep_EpochTime = 0;
+void deep_sleep()
+{
+    if(time_get_strap == false)
+    {
+        time_get_strap = true;
+        sleep_EpochTime = timeClient.getEpochTime() / 60;
+    }
+    if(timeClient.isTimeSet() == true)
+    {   
+        if(sleep_time == 0)
+        {
+            return;
+        }
+        else
+        {
+            if((timeClient.getEpochTime() / 60) - sleep_EpochTime >= sleep_time)
+            {
+                esp_wifi_stop();
+                esp_sleep_enable_ext0_wakeup(GPIO_NUM_4, 0);
+                esp_deep_sleep_start();
+            }
+        }
     }
 }

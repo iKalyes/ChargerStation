@@ -5,6 +5,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include <WiFiManager.h>
+#include <esp_wifi.h>
 
 #include <variables.h>
 #include <time_server.h>

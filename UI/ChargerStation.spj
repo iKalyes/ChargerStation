@@ -9834,7 +9834,7 @@
                       {
                         "nid": 1030,
                         "strtype": "LABEL/Text",
-                        "strval": "10M",
+                        "strval": "0M",
                         "InheritedType": 10
                       },
                       {
@@ -9994,7 +9994,6 @@
                   {
                     "nid": 1040,
                     "strtype": "SLIDER/Value",
-                    "integer": 10,
                     "InheritedType": 6
                   },
                   {
